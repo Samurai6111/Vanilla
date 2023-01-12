@@ -1,7 +1,7 @@
 <?php
 
-$client_email = 's.kawakatsu@roseaupensant.jp';
-$client_email = 's.kawakatsu@roseaupensant.jp';
+$client_email = ''; // クライアント用のメール
+$client_email = ''; // クライアント用のメール
 $email_header_name = get_option('blogname');
 
 $email_signature =
