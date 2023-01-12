@@ -79,8 +79,6 @@ if (wp_get_current_user()->user_login === 'vanilla-admin') { ?>
 		form.find('input[name="company_name"]').val('株式会社test')
 		form.find('input[name="family_name"]').val('山田')
 		form.find('input[name="first_name"]').val('太郎')
-		form.find('input[name="email"]').val('s.kawakatsu@roseaupensant.jp')
-		form.find('input[name="email_confirm"]').val('s.kawakatsu@roseaupensant.jp')
 		form.find('input[name="tel"]').val('000-0000-0000')
 		form.find('input[name="address"]').val('東京都○○○○○○○○○○○○○○1-1-1○○○○ビル101号室')
 		form.find('textarea[name="notes"]').val('テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります')
