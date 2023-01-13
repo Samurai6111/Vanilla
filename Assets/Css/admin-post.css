@@ -1,1 +1,75 @@
-@charset 'UTF-8';.acfFloatingBanner{position:fixed;top:50%;left:100%;width:100%;max-width:240px;padding:20px;padding-left:60px;background-color:white;box-shadow:0 0 20px rgba(34, 113, 177, 0.3);border-radius:4px 0 0 4px;transform:translate(calc(-40px - 1em), -50%);transition:0.3s}.acfFloatingBanner:hover{transform:translate(-100%, -50%)}.acfFloatingBanner:hover::after{left:20px;content:'》'}.acfFloatingBanner::after{position:absolute;top:50%;left:0;display:inline-block;color:#2271b1;content:'《';font-size:40px;font-weight:900;transform:translate(0, -50%)}.acfFloatingBanner .acfFloatingBanner__scroll{flex-direction:column;gap:12px;display:flex;max-height:50vh;overflow-y:scroll}.acfFloatingBanner .acfFloatingBanner__link{align-items:flex-start;display:flex;outline:none;border:none}.acfFloatingBanner .acfFloatingBanner__link::before{display:inline-block;content:'';text-decoration:none}
+@charset "UTF-8";
+.acfFloatingBanner {
+  position: fixed;
+  top: 50%;
+  left: 100%;
+  width: 100%;
+  max-width: 240px;
+  padding: 20px;
+  padding-left: 60px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 20px rgba(34, 113, 177, 0.3);
+          box-shadow: 0 0 20px rgba(34, 113, 177, 0.3);
+  border-radius: 4px 0 0 4px;
+  -webkit-transform: translate(calc(-40px - 1em), -50%);
+          transform: translate(calc(-40px - 1em), -50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.acfFloatingBanner:hover {
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+}
+
+.acfFloatingBanner:hover::after {
+  left: 20px;
+  content: '》';
+}
+
+.acfFloatingBanner::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: inline-block;
+  color: #2271b1;
+  content: '《';
+  font-size: 40px;
+  font-weight: 900;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.acfFloatingBanner .acfFloatingBanner__scroll {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+
+.acfFloatingBanner .acfFloatingBanner__link {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  outline: none;
+  border: none;
+}
+
+.acfFloatingBanner .acfFloatingBanner__link::before {
+  display: inline-block;
+  content: '';
+  text-decoration: none;
+}

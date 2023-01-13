@@ -1,3 +1,16 @@
 {
-	"search.useIgnoreFiles": true
+	"liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/Assets/Css"
+    }
+  ],
+  "liveSassCompile.settings.excludeList": [
+    //対象外とするフォルダを指定
+    "**/node_modules/**",
+    ".vscode/**",
+    "**/Feature-suumo/**",
+    "**/Feature-map/**",
+  ],
 }
