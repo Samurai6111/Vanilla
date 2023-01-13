@@ -9,5 +9,5 @@ foreach ($file_list as $file_path) {
 	if (basename($file_path) === basename(__FILE__)) {
 		continue;
 	}
-	include $file_path;
+	require_once $file_path;
 }

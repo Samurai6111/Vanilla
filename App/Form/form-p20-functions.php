@@ -14,5 +14,5 @@ foreach ($filelist as $filepath) {
 	) {
 		continue;
 	}
-	include $filepath;
+	require_once $filepath;
 }

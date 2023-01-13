@@ -6,7 +6,7 @@
  * @subpackage Vanilla
  */
 ?>
-<?php include(get_theme_file_path() . "/Footers/footer-vanilla.php") ?>
+<?php require_once(get_theme_file_path() . "/Footers/footer-vanilla.php") ?>
 
 <?php // このファイルにはコードを記述しない
 ?>

@@ -66,6 +66,4 @@
 	// フッターは「vanilla-header.php」に記述する
 	?>
 
-	<?php
-	include(get_theme_file_path() . "/Headers/header-vanilla.php");
-	?>
+	<?php require_once(get_theme_file_path() . "/Headers/header-vanilla.php"); ?>
