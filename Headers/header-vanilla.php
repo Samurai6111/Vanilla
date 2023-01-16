@@ -1,60 +1,37 @@
 <div class="headerWrap">
-	<header class="header"
-					id="header">
+	<header class="header" id="header">
 		<div class="inner -header">
 			<div class="header__flex">
 
-				<a class="header__logo"
-					 href="<?php echo home_url(); ?>">
-					<img class="header__logoImg -pc-only"
-							 src="<? //php echo get_template_directory_uri()
-																											?>/Img/common/icon_logo_black_pc_1.svg"
-							 alt="ロゴ">
-					<img class="header__logoImg -sp-only"
-							 src="<? //php echo get_template_directory_uri()
-																											?>/Img/common/icon_logo_black_sp_1.svg"
-							 alt="ロゴ">
+				<a class="header__logo" href="<?php echo home_url(); ?>">
+					<img class="header__logoImg -pc-only" src="<?php echo get_template_directory_uri()
+																											?>/Img/common/icon_logo_black_pc_1.svg" alt="ロゴ">
+					<img class="header__logoImg -sp-only" src="<?php echo get_template_directory_uri()
+																											?>/Img/common/icon_logo_black_sp_1.svg" alt="ロゴ">
 				</a>
 
 
-				<?php
+				<div class="header__navWrap -pc">
+					<ul class="header__nav">
+						<li class="header__navItem"><a href="<?php echo home_url(); ?>">トップ</a></li>
+						<li class="header__navItem"><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
+					</ul>
 
-				$menu_args = [
-					'container_class' => 'header__navWrap -pc',
-					'menu_class' => 'header__nav',
-					'theme_location' => 'vanilla-nav-menu-pc'
-				];
-				wp_nav_menu($menu_args);
-				?>
 
-				<div class="gnav">
+				</div>
+
+				<div class="gnav" id="gnav">
 					<div class="gnav__inner">
 						<div class="gnav__scroll">
-							<?php
-							$menu_args = [
-								'container_class' => 'gnav__listWrap -sp',
-								'menu_class' => 'gnav__list',
-								'theme_location' => 'vanilla-nav-menu-pc'
-							];
-							wp_nav_menu($menu_args);
-							?>
-
-							<a href="__TBD__"
-								 target="_blank"
-								 rel="noopener"
-								 class="gnav__corporateSite">
-								<img src="<? //php echo get_template_directory_uri()
-													?>/Img/common/icon_logo_white_1.svg"
-										 alt="ロゴ"
-										 class="gnav__corporateSiteImg">
-								<span class="gnav__corporateSiteText">コーポレートサイト</span>
-
-							</a>
+							<div class="gnav__listWrap -sp">
+								<ul id="" class="gnav__list">
+									<li class="gnav__item"><a href="<?php echo home_url(); ?>">トップ</a></li>
+									<li class="gnav__item"><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-
-
 
 
 				<div class="hamburger_wrap">
