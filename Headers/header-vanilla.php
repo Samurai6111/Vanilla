@@ -13,11 +13,9 @@
 
 				<div class="header__navWrap -pc">
 					<ul class="header__nav">
-						<li class="header__navItem"><a href="<?php echo home_url(); ?>">トップ</a></li>
+						<li class="header__navItem"><a href="<?php echo home_url('/'); ?>">トップ</a></li>
 						<li class="header__navItem"><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
 					</ul>
-
-
 				</div>
 
 				<div class="gnav" id="gnav">
@@ -25,14 +23,13 @@
 						<div class="gnav__scroll">
 							<div class="gnav__listWrap -sp">
 								<ul id="" class="gnav__list">
-									<li class="gnav__item"><a href="<?php echo home_url(); ?>">トップ</a></li>
+									<li class="gnav__item"><a href="<?php echo home_url('/'); ?>">トップ</a></li>
 									<li class="gnav__item"><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-
 
 				<div class="hamburger_wrap">
 					<nav class="hamburger hamburger-js js__modal__trigger">
@@ -45,3 +42,16 @@
 		</div>
 	</header>
 </div>
+
+
+<script>
+	let header = $('#header')
+	let a = header.find('a')
+	a.each(function() {
+		console.log($(this).attr('href'))
+		if ($(this).attr('href') === window.location.href) {
+			$(this).parent().addClass('-current')
+		}
+	})
+
+</script>
