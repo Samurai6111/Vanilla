@@ -365,7 +365,6 @@ function vanilla_get_attachment_post_id($slug) {
 	return $thumbnail_id;
 }
 
-
 /**
  * カスタムフィールドのinstrcutions用に使う画像をアコーディオンで出力する関数
  *
@@ -374,17 +373,11 @@ function vanilla_get_attachment_post_id($slug) {
 function vanilla_acf_fields_accordion($img_file) {
 	$html =
 		'<div class="acfAccordion -img">'
-		. '<p class="acfAccordion__header button tagadd js__accordion__header">説明を見る</p>'
-		. '<figure class="acfAccordion__body">'
-		. '	<img src="'
-		. get_template_directory_uri() . '/Img/Dashboard/Acf/' . $img_file
-		. '" alt="説明文">'
-		. '</figure>'
-		. '</div>'
-		. '<p>＊「説明を見る」をクリックしても説明が表示されない場合は、一度投稿を保存して再度お試しください</p>';
+		. '<a href="' . get_template_directory_uri() . '/Img/Dashboard/Acf/' . $img_file . '" '
+		. 'class="button tagadd" target="_blank" rel="noopener">説明を見る</a>'
+		. '</div>';
 	return $html;
 }
-
 
 /**
  * 投稿のmenu_orderを引数の配列の順番に変更する関数

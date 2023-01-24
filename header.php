@@ -59,7 +59,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body id="top">
+<body id="top" oncontextmenu="return false;" oncopy="return false;">
 
 	<?php
 	// 基本的にこのファイルにはhtmlコードを記述しない
