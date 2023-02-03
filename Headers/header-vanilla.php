@@ -13,9 +13,10 @@
 
 				<div class="header__navWrap -pc">
 					<ul class="header__nav">
-						<li class="header__navItem"><a href="<?php echo home_url('/'); ?>">トップ</a></li>
-						<li class="header__navItem"><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
+						<li class="header__navItem <?php header_current(is_front_page()) ?>"><a href="<?php echo home_url('/'); ?>">トップ</a></li>
+						<li class="header__navItem <?php header_current(is_page('contact')) ?>"><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
 					</ul>
+
 				</div>
 
 				<div class="gnav" id="gnav">
@@ -23,8 +24,8 @@
 						<div class="gnav__scroll">
 							<div class="gnav__listWrap -sp">
 								<ul id="" class="gnav__list">
-									<li class="gnav__item"><a href="<?php echo home_url('/'); ?>">トップ</a></li>
-									<li class="gnav__item"><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
+									<li class="gnav__item  <?php header_current(is_front_page()) ?>"><a href="<?php echo home_url('/'); ?>">トップ</a></li>
+									<li class="gnav__item <?php header_current(is_page('contact')) ?>"><a href="<?php echo home_url('/contact/'); ?>">お問い合わせ</a></li>
 								</ul>
 							</div>
 						</div>
