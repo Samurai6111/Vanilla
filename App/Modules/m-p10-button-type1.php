@@ -1,9 +1,16 @@
 <?php
+
+/**
+* ボタンタイプ1 (共通のボタン)
+*
+* @param $args
+* @return
+*/
 function button_type1($args) {
 	//--------------------------------------------------
 	// 初期値
 	//--------------------------------------------------
-	$args_init = [
+	$faults = [
 		'text' => 'もっと見る',
 		'class' => '',
 		'img' => get_template_directory_uri() . "/src/images/common/icon_arrow_right_white_1.svg",
@@ -14,10 +21,7 @@ function button_type1($args) {
 	//--------------------------------------------------
 	// 変数の変更
 	//--------------------------------------------------
-	foreach ($args_init as $key => $value) {
-		$args_value = (!isset($args[$key])) ? $value : $args[$key];
-		$args[$key] = $args_value;
-	}
+	$args = wp_parse_args($args, $faults);
 ?>
 	<<?= esc_attr($args['tag']) ?> class="buttonType1 <?= esc_attr($args['class']) ?>" <?= $args['attr'] ?>>
 		<p class="buttonType1__text">
