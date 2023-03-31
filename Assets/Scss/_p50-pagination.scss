@@ -33,11 +33,18 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			border: .1rem solid lightgray;
+			border: .1rem solid $lightgray_ccc;
 			border-radius: 50%;
 			font-size: 1.5rem;
 			@include poppins;
 			font-weight: 500;
+
+
+			@media #{$tab}{
+				font-size: 1.4rem;
+				width: 3.5rem;
+				height: 3.5rem;
+			}
 
 			//____________________________
 			// モディファイア
@@ -46,7 +53,6 @@
 				opacity: 0.7;
 				text-decoration: none;
 			}
-
 		}
 
 		.prev, .next {
@@ -56,6 +62,11 @@
 			@include poppins;
 			text-decoration: underline;
 			border: none;
+
+			@media #{$tab}{
+				margin: 0 1rem;
+
+			}
 		}
 
 		.current {

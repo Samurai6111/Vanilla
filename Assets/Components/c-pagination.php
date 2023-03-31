@@ -10,7 +10,8 @@
 	));
 	wp_reset_postdata();
 
-	?>
+	if (!empty($pagination_array)) {
+		?>
 	<ul class="pagination__list">
 		<?php
 		//= 1ページ目の時にもPREVを表示 ====
@@ -26,10 +27,11 @@
 
 		<?php
 		//= 最後のページの時にもNEXTを表示 ====
-		if (vanilla_paged() === (int)$WP_post->max_num_pages) { ?>
+		if (vanilla_paged() === (int) $WP_post->max_num_pages) { ?>
 			<li class="pagination__item">
 				<span class="next page-numbers -disabled">NEXT</span>
 			</li>
 		<?php } ?>
 	</ul>
+	<?php } ?>
 </div>
