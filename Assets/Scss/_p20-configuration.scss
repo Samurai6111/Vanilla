@@ -75,6 +75,33 @@ $one_margin: calc(calc(100vw - #{$inner}) / 2);
 	}
 }
 
+/** --------------------------------
+* 画像の縦横比を指定する関数  figureタグに付与
+*
+* @param $height 横幅100の時の縦の割合 *「%」で指定
+*/
+@mixin img_aspect_ratio($height) {
+	position: relative;
+	width: 100%;
+
+	&::before {
+		display: block;
+		padding-top: $height;
+		content: '';
+	}
+
+	& > * {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		margin: auto;
+	}
+}
 
 /** --------------------------------
 * cssの値を単位を除いて数字だけにしてくれる関数
@@ -104,7 +131,7 @@ $one_margin: calc(calc(100vw - #{$inner}) / 2);
 * @param $viewport pcデザインの横幅
 * @param $fontSize フォントサイズ(pxでもremでも)
 */
-@function vw($fontSize, $base-vw: 1280px) {
+@function vw($fontSize, $base-vw: 1356px) {
 	$unit: getUnit($fontSize);
 
 	@if $unit == px {
@@ -121,34 +148,6 @@ $one_margin: calc(calc(100vw - #{$inner}) / 2);
 * @param $pc pcのフォントサイズ
 * @param $sp spのフォントサイズ
 */
-@function responsiveValue($pc, $sp) {
-	@return clamp(#{$sp}, vw($pc) , #{$pc});
-}
-
-
-/** --------------------------------
-* 画像の縦横比を指定する関数  figureタグに付与
-*
-* @param $height 横幅100の時の縦の割合 *「%」で指定
-*/
-@mixin img_aspect_ratio($height) {
-	position: relative;
-	width: 100%;
-	&::before {
-		display: block;
-		padding-top: $height;
-		content: '';
-	}
-
-	& > * {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		margin: auto;
-	}
+@function responsiveValue($pc, $sp, $base-vw: 1356px) {
+	@return clamp($sp, vw($pc, $base-vw) , $pc);
 }
