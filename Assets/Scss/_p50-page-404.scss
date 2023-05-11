@@ -1,0 +1,35 @@
+.page404 {
+	padding: 8rem 0;
+
+	.page404__title {
+		margin-bottom: 4rem;
+		font-size: 3.2rem;
+		font-weight: 600;
+		text-align: center;
+
+		@media #{$tab} {
+			font-size: 2.4rem;
+		}
+	}
+
+	.page404__text {
+		margin-bottom: 2.4rem;
+		font-size: 1.6rem;
+		text-align: center;
+
+		@media #{$tab} {
+			font-size: 1.4rem;
+		}
+	}
+
+	.page404__link {
+		display: block;
+		font-size: 1.6rem;
+		text-align: center;
+		text-decoration: underline;
+
+		@media #{$tab} {
+			font-size: 1.4rem;
+		}
+	}
+}
