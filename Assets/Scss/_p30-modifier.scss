@@ -53,7 +53,6 @@ table.-sp-only {
 	}
 }
 
-
 .-color-red {
 	color: red;
 }
@@ -73,10 +72,17 @@ table.-sp-only {
 	background-color: $white_fff;
 }
 
-
 // ---------- flex ----------
 .-flex {
 	display: flex;
+}
+
+.-aic {
+	align-items: center;
+}
+
+.-jcfe {
+	justify-content: flex-end;
 }
 
 // ---------- 縦書き ----------
