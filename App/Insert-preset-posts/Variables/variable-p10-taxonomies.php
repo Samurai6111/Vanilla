@@ -1,4 +1,0 @@
-<?php
-$taxonomies = [
-	// 'slug' => 'name',
-];

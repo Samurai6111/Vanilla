@@ -428,6 +428,11 @@ th {
 * @param $color カラーコード
 */
 /** --------------------------------
+* 画像の縦横比を指定する関数  figureタグに付与
+*
+* @param $height 横幅100の時の縦の割合 *「%」で指定
+*/
+/** --------------------------------
 * cssの値を単位を除いて数字だけにしてくれる関数
 *
 * @param 数字と単位を含む値 10ox, 3remなど
@@ -448,11 +453,6 @@ th {
 *
 * @param $pc pcのフォントサイズ
 * @param $sp spのフォントサイズ
-*/
-/** --------------------------------
-* 画像の縦横比を指定する関数  figureタグに付与
-*
-* @param $height 横幅100の時の縦の割合 *「%」で指定
 */
 * {
   max-width: 100%;
@@ -602,6 +602,20 @@ table.-sp-only {
   display: flex;
 }
 
+.-aic {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.-jcfe {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .-tategaki {
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
@@ -624,6 +638,18 @@ table.-sp-only {
 
 .-td-u {
   text-decoration: underline;
+}
+
+.-hide-scroll-bar {
+  -ms-overflow-style: none;
+  /* IE, Edge 対応 */
+  scrollbar-width: none;
+  /* Firefox 対応 */
+}
+
+.-hide-scroll-bar::-webkit-scrollbar {
+  /* Chrome, Safari 対応 */
+  display: none;
 }
 
 .js__accordion__header {
@@ -665,7 +691,7 @@ table.-sp-only {
 
 .buttonType1 .buttonType1__text {
   color: #000;
-  font-size: clamp(1.4rem, 1.25vw, 1.6rem);
+  font-size: clamp(1.4rem, 1.17994vw, 1.6rem);
   font-weight: 500;
   letter-spacing: 0.01em;
   text-align: center;
@@ -903,7 +929,7 @@ body {
 
 .inner {
   width: 100%;
-  max-width: clamp(calc(37.5rem + 4rem), 79.6875vw, 102rem);
+  max-width: clamp(calc(37.5rem + 4rem), 75.22124vw, 102rem);
   padding-right: 2rem;
   padding-left: 2rem;
   margin: 0 auto;
@@ -911,11 +937,11 @@ body {
 
 .inner.-wide {
   max-width: calc(116rem + 4rem);
-  max-width: clamp(calc(37.5rem + 4rem), 93.75vw, 120rem);
+  max-width: clamp(calc(37.5rem + 4rem), 88.49558vw, 120rem);
 }
 
 .inner.-header {
-  max-width: clamp(calc(37.5rem + 4rem), 103.125vw, 132rem);
+  max-width: clamp(calc(37.5rem + 4rem), 97.34513vw, 132rem);
 }
 
 .gnav {
@@ -942,13 +968,13 @@ body {
           transform: translate(-50%, 0);
 }
 
-.gnav .gnav__listWrap .gnav__list .menu-item {
+.gnav .gnav__listWrap .gnav__list .gnav__item {
   position: relative;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.gnav .gnav__listWrap .gnav__list .menu-item::before {
+.gnav .gnav__listWrap .gnav__list .gnav__item::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -959,11 +985,11 @@ body {
   background-color: white;
 }
 
-.gnav .gnav__listWrap .gnav__list .menu-item:last-child {
+.gnav .gnav__listWrap .gnav__list .gnav__item:last-child {
   position: relative;
 }
 
-.gnav .gnav__listWrap .gnav__list .menu-item:last-child::after {
+.gnav .gnav__listWrap .gnav__list .gnav__item:last-child::after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -974,7 +1000,7 @@ body {
   background-color: white;
 }
 
-.gnav .gnav__listWrap .gnav__list .menu-item a {
+.gnav .gnav__listWrap .gnav__list .gnav__item a {
   position: relative;
   display: block;
   width: 100%;
@@ -983,7 +1009,7 @@ body {
   color: white;
 }
 
-.gnav .gnav__listWrap .gnav__list .menu-item a::after {
+.gnav .gnav__listWrap .gnav__list .gnav__item a::after {
   position: absolute;
   top: 50%;
   right: 2rem;
@@ -1001,7 +1027,7 @@ body {
   transition: 0.3s;
 }
 
-.gnav .gnav__listWrap .gnav__list .menu-item a:hover::after {
+.gnav .gnav__listWrap .gnav__list .gnav__item a:hover::after {
   right: 1rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -1220,7 +1246,7 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: clamp(20rem, 23.4375vw, 30rem);
+  max-width: clamp(20rem, 22.12389vw, 30rem);
   margin-right: 2.4rem;
 }
 
@@ -1247,7 +1273,7 @@ body {
   height: 100%;
 }
 
-.headerWrap .header .header__flex .header__navWrap .header__nav > .menu-item {
+.headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -1260,20 +1286,20 @@ body {
   -webkit-justify-content: center;
           justify-content: center;
   padding: 1.8rem 0;
-  margin-right: clamp(1.5rem, 1.95312vw, 2.5rem);
+  margin-right: clamp(1.5rem, 1.84366vw, 2.5rem);
   -webkit-box-align: center;
   -webkit-box-pack: center;
 }
 
-.headerWrap .header .header__flex .header__navWrap .header__nav > .menu-item > a {
+.headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem > a {
   padding-bottom: 0rem;
 }
 
-.headerWrap .header .header__flex .header__navWrap .header__nav > .menu-item.current-menu-item > a {
+.headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem.current-menu-item > a {
   border-bottom: 0.3rem solid #000;
 }
 
-.headerWrap .header .header__flex .header__navWrap .header__nav > .menu-item.-entry a {
+.headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem.-entry a {
   width: 14rem;
   padding: 0.8rem;
   margin-right: 0;
@@ -1282,12 +1308,12 @@ body {
   border-radius: 10rem;
 }
 
-.headerWrap .header .header__flex .header__navWrap .header__nav > .menu-item a {
-  font-size: clamp(1rem, 1.17188vw, 1.5rem);
+.headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem a {
+  font-size: clamp(1rem, 1.10619vw, 1.5rem);
   font-weight: 600;
 }
 
-.headerWrap .header .header__flex .header__navWrap .header__nav > .menu-item .sub-menu {
+.headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem .sub-menu {
   position: absolute;
   top: calc(100% - 2rem);
   left: 0;
@@ -1298,18 +1324,18 @@ body {
   background-color: #000;
 }
 
-.headerWrap .header .header__flex .header__navWrap .header__nav > .menu-item .sub-menu .menu-item {
+.headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem .sub-menu .menu-item {
   display: block;
   width: auto;
   padding: 0;
   margin-right: 0;
 }
 
-.headerWrap .header .header__flex .header__navWrap .header__nav > .menu-item .sub-menu .menu-item:not(:last-child) {
+.headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem .sub-menu .menu-item:not(:last-child) {
   margin-bottom: 1.6rem;
 }
 
-.headerWrap .header .header__flex .header__navWrap .header__nav > .menu-item .sub-menu .menu-item > a {
+.headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem .sub-menu .menu-item > a {
   color: #fff;
   font-size: 1.5rem;
   font-weight: 600;
@@ -1394,14 +1420,791 @@ body {
   opacity: 0.7;
 }
 
+.page404 {
+  padding: 8rem 0;
+}
+
+.page404 .page404__title {
+  margin-bottom: 4rem;
+  font-size: 3.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .page404 .page404__title {
+    font-size: 2.4rem;
+  }
+}
+
+.page404 .page404__text {
+  margin-bottom: 2.4rem;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .page404 .page404__text {
+    font-size: 1.4rem;
+  }
+}
+
+.page404 .page404__link {
+  display: block;
+  font-size: 1.6rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .page404 .page404__link {
+    font-size: 1.4rem;
+  }
+}
+
+.pageContact {
+  padding-top: 18rem;
+  padding-bottom: 18rem;
+}
+
+.pageContact .contactForm__notice {
+  padding: 4rem 2rem;
+  margin-bottom: 8rem;
+  font-size: 1.5rem;
+  line-height: 2;
+  text-align: center;
+  background-color: lightgray;
+}
+
+@media only screen and (max-width: 768px) {
+  .pageContact .contactForm__notice {
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .pageContact .contactForm__notice br {
+    display: none;
+  }
+}
+
+.pageContact .contactForm__confirmNotice {
+  display: none;
+}
+
+.pageContact .contactForm__list {
+  margin-bottom: 7rem;
+}
+
+.pageContact .p-country-name {
+  display: none;
+}
+
+.pageContact .contactForm__item {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pageContact .contactForm__item:not(:last-child) {
+  margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 1280px) {
+  .pageContact .contactForm__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.pageContact .contactForm__item.-hide {
+  display: none;
+}
+
+.pageContact .contactForm__item.-show {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pageContact .contactForm__title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 22rem;
+  font-size: clamp(1.6rem, 1.32743vw, 1.8rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 1280px) {
+  .pageContact .contactForm__title {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.pageContact .contactForm__title.-required::after {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  padding: 0rem 0.6rem;
+  margin-top: 0.6rem;
+  color: #fff;
+  content: '必須';
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: #ff0000;
+  border-radius: 0.5rem;
+}
+
+.pageContact input[type='number']::-webkit-outer-spin-button,
+.pageContact input[type='number']::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.pageContact input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.pageContact input[type='number'],
+.pageContact input[type='text'],
+.pageContact input[type='email'],
+.pageContact textarea,
+.pageContact select {
+  width: 100%;
+  min-height: 5rem;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.6rem;
+  background-color: lightgray;
+  border: none;
+  border: 0.1rem solid gray;
+  border-radius: 0.3rem;
+}
+
+.pageContact input[name='in_post_number'] {
+  max-width: 32rem;
+}
+
+.pageContact .contactForm__input {
+  width: 100%;
+}
+
+.pageContact .contactForm__input .mwform-tel-field input {
+  width: 9.7rem;
+  padding: 1.2rem;
+}
+
+.pageContact .contactForm__input.-col2 {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.pageContact .contactForm__input.-address {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.pageContact .contactForm__placeholder {
+  margin-top: 0.4rem;
+  color: gray;
+  font-size: 1.4rem;
+}
+
+.pageContact .-select {
+  position: relative;
+  min-width: 21rem;
+}
+
+.pageContact .-select::after {
+  position: absolute;
+  top: 2.4rem;
+  right: 3rem;
+  display: inline-block;
+  width: 1.4rem;
+  height: 0.7rem;
+  content: '';
+  background-image: url(../..//assets/image/../..//assets/image/Img/Common/icon_arrow_down_1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .pageContact .-select::after {
+    right: 2rem;
+  }
+}
+
+.pageContact .-checkboxes {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pageContact .-checkboxes .mwform-checkbox-field,
+.pageContact .-checkboxes .mwform-radio-field {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 4rem;
+  margin-bottom: 1.5rem;
+  margin-left: 0 !important;
+}
+
+.pageContact .-checkboxes label {
+  position: relative;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pageContact .-checkboxes input[type='checkbox'],
+.pageContact .-checkboxes input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pageContact .-checkboxes .mwform-checkbox-field-text,
+.pageContact .-checkboxes .mwform-radio-field-text {
+  position: relative;
+  padding-left: 3rem;
+  font-size: 1.5rem;
+}
+
+.pageContact .-checkboxes .mwform-checkbox-field-text::before,
+.pageContact .-checkboxes .mwform-radio-field-text::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: inline-block;
+  width: 2.6rem;
+  height: 2.6rem;
+  content: '';
+  background-color: lightgray;
+  border: 0.1rem solid gray;
+  border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.pageContact .-checkboxes .mwform-checkbox-field-text::after,
+.pageContact .-checkboxes .mwform-radio-field-text::after {
+  position: absolute;
+  top: 50%;
+  left: 0.6rem;
+  display: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  content: '';
+  background-color: #333333;
+  border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.pageContact .-checkboxes input:checked + .mwform-checkbox-field-text::after,
+.pageContact .-checkboxes input:checked + .mwform-radio-field-text::after {
+  display: inline-block;
+}
+
+.pageContact .-checkboxes .error {
+  width: 100%;
+}
+
+.pageContact .-checkboxes.-wrap {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.pageContact .-dob {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: row !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 52rem;
+  gap: 0.8rem;
+}
+
+.pageContact .-dob .-unit {
+  padding-left: 0.4rem;
+  font-size: 1.5rem;
+}
+
+.pageContact .-dob .-dob-item {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 33%;
+}
+
+.pageContact .-dob input {
+  width: calc(100% - 2rem);
+}
+
+.pageContact .-dob .error {
+  -webkit-box-ordinal-group: 4;
+  -webkit-order: 3;
+      -ms-flex-order: 3;
+          order: 3;
+  width: 100%;
+}
+
+.pageContact .contactForm__inputText {
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+
+.pageContact .contactForm__inputText #insurance_link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.pageContact .contactForm__inputText #insurance_link.-pen {
+  color: #000;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.pageContact .contactForm__postNumbers {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.pageContact .contactForm__prefecture,
+.pageContact .contactForm__prefecture select {
+  display: inline-block;
+}
+
+.pageContact .contactForm__text {
+  font-size: 1.4rem;
+  line-height: 2;
+  letter-spacing: 0.03em;
+}
+
+.pageContact .contactForm__text a {
+  text-decoration: underline;
+}
+
+.pageContact .error {
+  display: inline-block;
+  color: #ff0000 !important;
+  font-size: 1.4rem !important;
+}
+
+.pageContact .contactForm__confirm {
+  margin-bottom: 6rem;
+}
+
+.pageContact .contactForm__confirmTitle {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.pageContact .contactForm__confirmText {
+  height: 23rem;
+  padding: 2.5rem 3.2rem;
+  margin-bottom: 6rem;
+  overflow-y: scroll;
+  font-size: 1.4rem;
+  border: 0.1rem solid lightgray;
+}
+
+.pageContact .contactForm__confirmText p {
+  margin-bottom: 1em;
+}
+
+.pageContact .contactForm__confirmText ul {
+  margin-bottom: 1em;
+}
+
+.pageContact .contactForm__confirmText li {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+
+.pageContact .error {
+  width: 100%;
+}
+
+.pageContact .mwform-checkbox-field {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pageContact .contactForm__confirm .mwform-checkbox-field {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pageContact .contactForm__confirm .mwform-checkbox-field input {
+  margin: 0;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+.pageContact .contactForm__confirm .mwform-checkbox-field label {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 500;
+  gap: 0.8rem;
+}
+
+.pageContact .contactForm__confirmCheckbox {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pageContact .contactForm__confirmCheckbox .error {
+  text-align: center;
+}
+
+.pageContact .contactForm__submitWrap {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pageContact .contactForm__buttonWrap {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 42rem;
+  margin-top: 3rem;
+}
+
+.pageContact .contactForm__buttonWrap br {
+  display: none;
+}
+
+.pageContact .contactForm__buttonWrap input[name='in_submit'],
+.pageContact .contactForm__buttonWrap input[name='submit'],
+.pageContact .contactForm__buttonWrap input[name='submitConfirm'] {
+  display: block;
+  width: 100%;
+  height: 7rem;
+  max-width: 42rem;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  background-color: #ff0000;
+  border: none;
+  outline: none;
+}
+
+.pageContact .contactForm__buttonWrap input[name='submitBack'] {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.1rem solid #000;
+  outline: none;
+}
+
+.pageContact .contactForm__buttonWrap.-submit {
+  position: relative;
+}
+
+.pageContact .contactForm__buttonWrap.-submit::after {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  content: '';
+  background-image: url(../..//assets/image/../..//assets/image//common/icon_right_arrow_circle_1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm {
+  max-width: 86rem;
+  margin: 0 auto;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__notice {
+  display: none;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__inputText {
+  display: none;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__confirmNotice {
+  display: block;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .-dob .-dob-item {
+  width: auto !important;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__confirmNoticeTitle {
+  margin-bottom: 6rem;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__confirmNoticeTitle {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__confirmNoticeText {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 7rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  gap: 0.8rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__confirmNoticeText {
+    margin-bottom: 5rem;
+    font-size: 1.3rem;
+  }
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__confirmNoticeText::before {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1.8rem;
+  height: 1.8rem;
+  color: #fff;
+  content: '!';
+  background-color: #ff0000;
+  border-radius: 50%;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__input {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1.6rem;
+  font-size: 1.5rem;
+  background-color: #fff;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__input .contactForm__prefecture::after, .pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__input::after, .pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__input::before {
+  display: none;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__input.-address {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__placeholder {
+  display: none;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .-select::after {
+  display: none;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__confirm {
+  display: none;
+}
+
+.pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__buttonWrap {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5rem;
+}
+
+@media only screen and (max-width: 1280px) {
+  .pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__buttonWrap .contactForm__text {
+    text-align: left;
+  }
+}
+
 .pageThanks {
   padding-top: 7rem;
-  padding-bottom: clamp(11rem, 15.625vw, 20rem);
+  padding-bottom: clamp(11rem, 14.74926vw, 20rem);
 }
 
 .pageThanks .pageThanks__title {
-  margin-bottom: clamp(1.8rem, 1.5625vw, 2rem);
-  font-size: clamp(2rem, 2.8125vw, 3.6rem);
+  margin-bottom: clamp(1.8rem, 1.47493vw, 2rem);
+  font-size: clamp(2rem, 2.65487vw, 3.6rem);
   font-weight: 600;
   letter-spacing: 0.05em;
   text-align: center;
@@ -1415,57 +2218,97 @@ body {
 
 .pageThanks .pageThanks__text {
   text-align: center;
-  -webkit-box-flex: clamp(1.4rem, 1.17188vw, 1.5rem);
-  -webkit-flex: clamp(1.4rem, 1.17188vw, 1.5rem);
-      -ms-flex: clamp(1.4rem, 1.17188vw, 1.5rem);
-          flex: clamp(1.4rem, 1.17188vw, 1.5rem);
+  -webkit-box-flex: clamp(1.4rem, 1.10619vw, 1.5rem);
+  -webkit-flex: clamp(1.4rem, 1.10619vw, 1.5rem);
+      -ms-flex: clamp(1.4rem, 1.10619vw, 1.5rem);
+          flex: clamp(1.4rem, 1.10619vw, 1.5rem);
   font-weight: 500;
   letter-spacing: 0.03em;
 }
 
-.pagination {
-  padding: 4rem 0;
-  background-color: transparent;
-}
-
-.pagination > .page-numbers {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+.pagination .pagination__list {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   background-color: transparent;
+  gap: 1rem;
 }
 
-.pagination > .page-numbers li a {
+.pagination .pagination__item a,
+.pagination .pagination__item span {
+  font-size: 2rem;
+  letter-spacing: 0.04em;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.pagination > .page-numbers li a:hover {
+.pagination .pagination__item a:hover,
+.pagination .pagination__item span:hover {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
   opacity: 0.7;
 }
 
-.pagination > .page-numbers li .page-numbers {
-  display: inline-block;
-  width: 2rem;
-  height: 100%;
-  height: 2rem;
-  margin: 0 0.4rem;
-  text-align: center;
-  border: 1px solid #ff0000;
-  border-radius: 4px;
+.pagination .pagination__item .page-numbers {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 4.3rem;
+  height: 4.3rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border: 0.1rem solid lightgray;
+  border-radius: 50%;
 }
 
-.pagination > .page-numbers li .current {
-  color: white;
+@media only screen and (max-width: 768px) {
+  .pagination .pagination__item .page-numbers {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+.pagination .pagination__item .page-numbers.-disabled {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.pagination .pagination__item .prev,
+.pagination .pagination__item .next {
+  margin: 0 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-decoration: underline;
+  border: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .pagination .pagination__item .prev,
+  .pagination .pagination__item .next {
+    margin: 0 1rem;
+  }
+}
+
+.pagination .pagination__item .current {
+  color: #fff;
   background-color: #ff0000;
+  border: 0.1rem solid #ff0000;
 }
 
 .defaultTemplate {
@@ -1739,6 +2582,48 @@ body {
   padding: 0.8rem;
 }
 
+.vanillaSwiper__button {
+  top: auto;
+  right: auto;
+  left: auto;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 6rem;
+  height: 6rem;
+  margin: 0;
+  border-radius: 50%;
+}
+
+.vanillaSwiper__button::before {
+  display: inline-block;
+  width: 0.6rem;
+  height: 1.1rem;
+  content: '';
+  background-image: url(../../Img/Common/icon_arrow_right_black_1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.vanillaSwiper__button::after {
+  display: none;
+}
+
+.vanillaSwiper__button.swiper-button-prev::before {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
 .titleType1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1758,22 +2643,22 @@ body {
 }
 
 .titleType1 .titleType1__enText {
-  margin-right: clamp(0.8rem, 1.25vw, 1.6rem);
-  font-size: clamp(2.4rem, 2.5vw, 3.2rem);
+  margin-right: clamp(0.8rem, 1.17994vw, 1.6rem);
+  font-size: clamp(2.4rem, 2.35988vw, 3.2rem);
   font-weight: 500;
   letter-spacing: 0.06em;
 }
 
 .titleType1 .titleType1__jaText {
-  padding-bottom: clamp(0.3rem, 0.46875vw, 0.6rem);
-  font-size: clamp(1.3rem, 1.09375vw, 1.4rem);
+  padding-bottom: clamp(0.3rem, 0.44248vw, 0.6rem);
+  font-size: clamp(1.3rem, 1.03245vw, 1.4rem);
   font-weight: 300;
   letter-spacing: 0.02em;
 }
 
 .breadcrumb {
   margin-top: 1rem;
-  margin-bottom: clamp(3rem, 3.90625vw, 5rem);
+  margin-bottom: clamp(3rem, 3.68732vw, 5rem);
   overflow-x: scroll;
 }
 
@@ -1838,8 +2723,8 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: clamp(3rem, 3.125vw, 4rem);
-  margin-bottom: clamp(10rem, 11.71875vw, 15rem);
+  gap: clamp(3rem, 2.94985vw, 4rem);
+  margin-bottom: clamp(10rem, 11.06195vw, 15rem);
 }
 
 .vanillaForm .vanillaForm__rowList .vanillaForm__rowItem {
@@ -1872,7 +2757,7 @@ body {
 }
 
 .vanillaForm .vanillaForm__rowList .vanillaForm__rowItem .vanillaForm__label .vanillaForm__labelText {
-  font-size: clamp(1.4rem, 1.17188vw, 1.5rem);
+  font-size: clamp(1.4rem, 1.10619vw, 1.5rem);
   font-weight: 600;
   letter-spacing: 0.05em;
 }
@@ -1921,7 +2806,7 @@ body {
   display: inline-block;
   width: 100%;
   margin-top: 0.9rem;
-  font-size: clamp(1.4rem, 1.17188vw, 1.5rem);
+  font-size: clamp(1.4rem, 1.10619vw, 1.5rem);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
@@ -2008,14 +2893,14 @@ body {
 }
 
 .vanillaForm .vanillaFormPrivacy .vanillaFormPrivacy__title {
-  margin-bottom: clamp(2.2rem, 2.8125vw, 3.6rem);
-  font-size: clamp(1.4rem, 1.40625vw, 1.8rem);
+  margin-bottom: clamp(2.2rem, 2.65487vw, 3.6rem);
+  font-size: clamp(1.4rem, 1.32743vw, 1.8rem);
   font-weight: 600;
   text-align: center;
 }
 
 .vanillaForm .vanillaFormPrivacy .vanillaFormPrivacy__text {
-  font-size: clamp(1.2rem, 1.09375vw, 1.4rem);
+  font-size: clamp(1.2rem, 1.03245vw, 1.4rem);
   font-weight: 500;
 }
 
@@ -2034,7 +2919,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 2rem;
-  margin-bottom: clamp(5.4rem, 6.25vw, 8rem);
+  margin-bottom: clamp(5.4rem, 5.89971vw, 8rem);
 }
 
 .vanillaForm .vanillaForm__privacyCheckboxWrap .vanillaForm__inputs {
@@ -2050,7 +2935,7 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: clamp(1.2rem, 1.17188vw, 1.5rem);
+  font-size: clamp(1.2rem, 1.10619vw, 1.5rem);
   font-weight: 600;
   letter-spacing: 0.04em;
 }
@@ -2069,7 +2954,7 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: clamp(1.5rem, 1.5625vw, 2rem);
+  gap: clamp(1.5rem, 1.47493vw, 2rem);
 }
 
 .vanillaForm .vanillaForm__buttonWrap > .buttonType1 {
@@ -2087,7 +2972,7 @@ body {
 }
 
 .vanillaForm .vanillaForm__buttonWrap > .buttonType1.-large .buttonType1__text {
-  font-size: clamp(1.4rem, 1.5625vw, 2rem);
+  font-size: clamp(1.4rem, 1.47493vw, 2rem);
 }
 
 .vanillaForm.-error .vanillaForm__rowList .vanillaForm__inputWrap .vanillaForm__inputs {
@@ -2111,13 +2996,13 @@ body {
 }
 
 .vanillaForm.-confirm .vanillaForm__rowListCaption {
-  margin-bottom: clamp(7rem, 7.8125vw, 10rem);
-  font-size: clamp(1.4rem, 1.40625vw, 1.8rem);
+  margin-bottom: clamp(7rem, 7.37463vw, 10rem);
+  font-size: clamp(1.4rem, 1.32743vw, 1.8rem);
 }
 
 .vanillaForm.-confirm .vanillaForm__rowList {
   gap: 0;
-  margin-bottom: clamp(7rem, 7.03125vw, 9rem);
+  margin-bottom: clamp(7rem, 6.63717vw, 9rem);
   border-top: 0.1rem solid #dddddd;
 }
 
@@ -2144,7 +3029,7 @@ body {
 }
 
 .vanillaForm.-confirm .vanillaForm__rowList .vanillaForm__rowItem .vanillaForm__inputWrap .vanillaForm__output {
-  font-size: clamp(1.4rem, 1.17188vw, 1.5rem);
+  font-size: clamp(1.4rem, 1.10619vw, 1.5rem);
   font-weight: 500;
   letter-spacing: 0.05em;
 }
@@ -2177,7 +3062,7 @@ body {
 
 .vanillaForm.-confirm .vanillaForm__confirmText {
   margin-bottom: 3rem;
-  font-size: clamp(1.4rem, 1.17188vw, 1.5rem);
+  font-size: clamp(1.4rem, 1.10619vw, 1.5rem);
   font-weight: 500;
   letter-spacing: 0.03em;
 }

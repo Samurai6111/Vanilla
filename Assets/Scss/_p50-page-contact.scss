@@ -1,0 +1,640 @@
+@charset 'UTF-8';
+
+.pageContact {
+	padding-top: 18rem;
+	padding-bottom: 18rem;
+
+	.contactForm__notice {
+		padding: 4rem 2rem;
+		margin-bottom: 8rem;
+		font-size: 1.5rem;
+		line-height: 2;
+		text-align: center;
+		background-color: lightgray;
+
+		@media #{$tab} {
+			padding: 3rem 2rem;
+			margin-bottom: 3rem;
+		}
+
+		br {
+			@media #{$tab} {
+				display: none;
+			}
+		}
+	}
+
+	.contactForm__confirmNotice {
+		display: none;
+	}
+
+	.contactForm__list {
+		margin-bottom: 7rem;
+	}
+
+	.p-country-name {
+		display: none;
+	}
+
+	.contactForm__item {
+		align-items: flex-start;
+		display: flex;
+
+		gap: 0.5rem;
+
+		&:not(:last-child) {
+			margin-bottom: 4rem;
+		}
+
+		@media #{$pc} {
+			flex-direction: column;
+
+			gap: 1rem;
+		}
+
+		&.-hide {
+			display: none;
+		}
+
+		&.-show {
+			display: flex;
+		}
+	}
+
+	.contactForm__title {
+		display: flex;
+		// height: 5rem;
+		min-width: 22rem;
+		font-size: responsiveValue(1.8rem, 1.6rem);
+		font-weight: 500;
+		letter-spacing: 0;
+		// align-items: center;
+
+		gap: 1rem;
+
+		@media #{$pc} {
+			width: 100%;
+			// height: 3.5rem;
+			min-width: 0;
+		}
+
+		//____________________________
+		// モディファイア
+		//____________________________
+		&.-required {
+			&::after {
+				align-items: center;
+				justify-content: center;
+				display: flex;
+				height: 100%;
+				padding: 0rem 0.6rem;
+				margin-top: 0.6rem;
+				color: $white_fff;
+				content: '必須';
+				font-size: 1.2rem;
+				font-weight: 500;
+				background-color: $primary;
+				border-radius: 0.5rem;
+			}
+		}
+	}
+
+	// ---------- 数字の上下を消す ----------
+	input[type='number']::-webkit-outer-spin-button ,
+	input[type='number']::-webkit-inner-spin-button {
+		margin: 0;
+		-webkit-appearance: none;
+	}
+
+	input[type=number] {
+		-moz-appearance: textfield;
+	}
+
+	input[type='number'] ,
+	input[type='text'] ,
+	input[type='email'] ,
+	textarea ,
+	select {
+		width: 100%;
+		min-height: 5rem;
+		padding: 1.2rem 2.4rem;
+		font-size: 1.6rem;
+		background-color: lightgray;
+		border: none;
+		border: 0.1rem solid gray;
+		border-radius: 0.3rem;
+
+		&::placeholder {
+		}
+	}
+
+	input[name='in_post_number'] {
+		max-width: 32rem;
+	}
+
+	.contactForm__input {
+		width: 100%;
+
+		// & > div {
+		// 	display: flex;
+		// 	flex-direction: column;
+		// }
+
+		.mwform-tel-field input {
+			width: 9.7rem;
+			padding: 1.2rem;
+		}
+
+		//____________________________
+		// モディファイア
+		//____________________________
+
+		&.-col2 {
+			align-items: center;
+			display: flex;
+
+			gap: 2.4rem;
+		}
+
+		&.-address {
+			align-items: flex-start;
+			flex-direction: column;
+			display: flex;
+
+			gap: 1rem;
+		}
+	}
+
+	.contactForm__placeholder {
+		margin-top: 0.4rem;
+		color: gray;
+		font-size: 1.4rem;
+	}
+
+	.-select {
+		position: relative;
+		min-width: 21rem;
+
+		&::after {
+			position: absolute;
+			top: 2.4rem;
+			right: 3rem;
+			display: inline-block;
+			width: 1.4rem;
+			height: 0.7rem;
+			content: '';
+			background-image: url(../..//assets/image/../..//assets/image/Img/Common/icon_arrow_down_1.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			pointer-events: none;
+
+			@media #{$tab} {
+				right: 2rem;
+			}
+		}
+	}
+
+	.-checkboxes {
+		display: flex;
+
+		.mwform-checkbox-field ,
+		.mwform-radio-field {
+			align-items: center;
+			display: flex;
+			margin-right: 4rem;
+			margin-bottom: 1.5rem;
+			margin-left: 0 !important;
+
+			// &:first-child ,
+			// &:nth-child(3) {
+			// 	max-width: 22rem;
+			// 	min-width: 22rem;
+			// }
+
+			// &:nth-child(2) ,
+			// &:nth-child(4) {
+			// 	width: calc(100% - 22rem);
+			// }
+		}
+
+		label {
+			position: relative;
+			align-items: center;
+			display: flex;
+		}
+
+		input[type='checkbox'] ,
+		input[type='radio'] {
+			position: absolute;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.mwform-checkbox-field-text ,
+		.mwform-radio-field-text {
+			position: relative;
+			padding-left: 3rem;
+			font-size: 1.5rem;
+
+			&::before {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				display: inline-block;
+				width: 2.6rem;
+				height: 2.6rem;
+				content: '';
+				background-color: lightgray;
+				border: 0.1rem solid gray;
+				border-radius: 50%;
+				transform: translateY(-50%);
+			}
+
+			&::after {
+				position: absolute;
+				top: 50%;
+				left: 0.6rem;
+				display: none;
+				width: 1.4rem;
+				height: 1.4rem;
+				content: '';
+				background-color: $black_333;
+				border-radius: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		input:checked + .mwform-checkbox-field-text ,
+		input:checked + .mwform-radio-field-text {
+			&::after {
+				display: inline-block;
+			}
+		}
+
+		.error {
+			// order: 3;
+			width: 100%;
+		}
+
+		//____________________________
+		// モディファイア
+		//____________________________
+		&.-wrap {
+			flex-wrap: wrap;
+		}
+	}
+
+	.-dob {
+		align-items: flex-end;
+		flex-direction: row !important;
+		display: flex;
+		width: 100%;
+		max-width: 52rem;
+
+		gap: 0.8rem;
+
+		.-unit {
+			padding-left: 0.4rem;
+			font-size: 1.5rem;
+		}
+
+		.-dob-item {
+			align-items: flex-end;
+			flex-wrap: wrap;
+			display: flex;
+			width: 33%;
+		}
+
+		input {
+			width: calc(100% - 2rem);
+		}
+
+		.error {
+			order: 3;
+			width: 100%;
+		}
+	}
+
+	.contactForm__inputText {
+		margin-bottom: 0.6rem;
+		font-size: 1.4rem;
+		line-height: 1.8;
+
+		#insurance_link {
+			color: blue;
+			text-decoration: underline;
+
+			&.-pen {
+				color: $black_000;
+				text-decoration: none;
+				pointer-events: none;
+			}
+		}
+	}
+
+	.contactForm__postNumbers {
+		align-items: center;
+		display: flex;
+
+		gap: 0.3rem;
+	}
+
+	.contactForm__prefecture ,
+	.contactForm__prefecture select {
+		// width: auto;
+		display: inline-block;
+	}
+
+	.contactForm__text {
+		font-size: 1.4rem;
+		line-height: 2;
+		letter-spacing: 0.03em;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	.error {
+		display: inline-block;
+		color: $primary !important;
+		font-size: 1.4rem !important;
+	}
+
+	.contactForm__confirm {
+		margin-bottom: 6rem;
+	}
+
+	.contactForm__confirmTitle {
+		margin-bottom: 2rem;
+		font-size: 1.5rem;
+		font-weight: 500;
+		text-align: center;
+	}
+
+	.contactForm__confirmText {
+		height: 23rem;
+		padding: 2.5rem 3.2rem;
+		margin-bottom: 6rem;
+		overflow-y: scroll;
+		font-size: 1.4rem;
+		border: 0.1rem solid lightgray;
+
+		p {
+			margin-bottom: 1em;
+		}
+
+		ul {
+			margin-bottom: 1em;
+		}
+
+		li {
+			padding-left: 2em;
+			text-indent: -2em;
+		}
+	}
+
+	.error {
+		width: 100%;
+	}
+
+	.mwform-checkbox-field {
+		align-items: center;
+		display: flex;
+	}
+
+	.contactForm__confirm {
+		.mwform-checkbox-field {
+			justify-content: center;
+		}
+
+		.mwform-checkbox-field input {
+			margin: 0;
+			transform: scale(2);
+			transform-origin: right;
+		}
+
+		.mwform-checkbox-field label {
+			align-items: center;
+			display: flex;
+			font-size: 1.5rem;
+			font-weight: 500;
+
+			gap: 0.8rem;
+		}
+	}
+
+	.contactForm__confirmCheckbox {
+		align-items: center;
+		flex-direction: column;
+		display: flex;
+
+		.error {
+			text-align: center;
+		}
+	}
+
+	.contactForm__submitWrap {
+		align-items: center;
+		flex-direction: column;
+		display: flex;
+	}
+
+	.contactForm__buttonWrap {
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		display: flex;
+		width: 100%;
+		max-width: 42rem;
+		margin-top: 3rem;
+
+		br {
+			display: none;
+		}
+
+		input[name='in_submit'] ,
+		input[name='submit'] ,
+		input[name='submitConfirm'] {
+			display: block;
+			width: 100%;
+			height: 7rem;
+			max-width: 42rem;
+			color: $white_fff;
+			font-size: 2rem;
+			font-weight: 600;
+			letter-spacing: 0.02em;
+			text-align: center;
+			background-color: $primary;
+			border: none;
+			outline: none;
+		}
+
+		input[name='submitBack'] {
+			padding-right: 0;
+			padding-left: 0;
+			font-size: 1.5rem;
+			letter-spacing: 0.02em;
+			background-color: transparent;
+			border: none;
+			border-bottom: 0.1rem solid $black_000;
+			outline: none;
+		}
+
+		&.-submit {
+			position: relative;
+
+			&::after {
+				position: absolute;
+				top: 2rem;
+				right: 3rem;
+				display: inline-block;
+				width: 3rem;
+				height: 3rem;
+				content: '';
+				background-image: url(../..//assets/image/../..//assets/image//common/icon_right_arrow_circle_1.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+			}
+		}
+	}
+
+	//____________________________
+	// 確認ページ
+	//____________________________
+	.mw_wp_form.mw_wp_form_confirm {
+		max-width: 86rem;
+		margin: 0 auto;
+
+		.contactForm__notice {
+			display: none;
+		}
+
+		.contactForm__inputText {
+			display: none;
+		}
+
+		.contactForm__confirmNotice {
+			display: block;
+		}
+
+		.-dob {
+			.-dob-item {
+				width: auto !important;
+			}
+		}
+
+		.contactForm__confirmNoticeTitle {
+			margin-bottom: 6rem;
+			font-size: 3rem;
+			font-weight: 600;
+			text-align: center;
+
+			@media #{$tab} {
+				margin-bottom: 1.5rem;
+				font-size: 2rem;
+			}
+		}
+
+		.contactForm__confirmNoticeText {
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			margin-bottom: 7rem;
+			font-size: 1.5rem;
+			font-weight: 500;
+
+			gap: 0.8rem;
+
+			@media #{$tab} {
+				margin-bottom: 5rem;
+				font-size: 1.3rem;
+			}
+
+			&::before {
+				align-items: center;
+				justify-content: center;
+				display: flex;
+				width: 1.8rem;
+				height: 1.8rem;
+				color: $white_fff;
+				content: '!';
+				background-color: $primary;
+				border-radius: 50%;
+			}
+		}
+
+		.contactForm__item {
+		}
+
+		.contactForm__input {
+			align-items: center;
+			display: flex;
+			padding: 0 1.6rem;
+			font-size: 1.5rem;
+			background-color: $white_fff;
+
+			.contactForm__prefecture::after ,
+			&::after ,
+			&::before {
+				display: none;
+			}
+
+			//____________________________
+			// モディファイア
+			//____________________________
+			&.-address {
+				align-items: flex-start;
+			}
+		}
+
+		.contactForm__placeholder {
+			display: none;
+		}
+
+		.-select {
+			&::after {
+				display: none;
+			}
+		}
+
+		.contactForm__confirm {
+			display: none;
+		}
+
+		.contactForm__buttonWrap {
+			position: relative;
+			flex-direction: column;
+
+			gap: 5rem;
+
+			// &::after {
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	right: 3rem;
+			// 	display: inline-block;
+			// 	width: 3rem;
+			// 	height: 3rem;
+			// 	content: '';
+			// 	background-image: url(../..//assets/image/../..//assets/image//common/icon_right_arrow_circle_1.svg);
+			// 	background-repeat: no-repeat;
+			// 	background-position: center;
+			// 	background-size: cover;
+			// 	transform: translate(0%,-50%);
+			// }
+
+			.contactForm__text {
+				@media #{$pc} {
+					text-align: left;
+				}
+			}
+
+			@media #{$pc} {
+				// flex-direction: column-reverse;
+				// gap: 0.5rem;
+			}
+		}
+	}
+}

@@ -4,21 +4,20 @@
 // ページネーション
 //____________________________
 .pagination {
-
 	.pagination__list {
-		display: flex;
 		justify-content: center;
+		display: flex;
 		background-color: transparent;
+
 		gap: 1rem;
 	}
 
-
 	.pagination__item {
-		a,
+		a ,
 		span {
-			transition: 0.3s;
 			font-size: 2rem;
 			letter-spacing: 0.04em;
+			transition: 0.3s;
 
 			&:hover {
 				transition: 0.3s;
@@ -28,51 +27,48 @@
 		}
 
 		.page-numbers {
-			width: 4.3rem;
-			height: 4.3rem;
-			display: flex;
 			align-items: center;
 			justify-content: center;
-			border: .1rem solid $lightgray_ccc;
-			border-radius: 50%;
+			display: flex;
+			width: 4.3rem;
+			height: 4.3rem;
 			font-size: 1.5rem;
-			@include poppins;
 			font-weight: 500;
+			border: 0.1rem solid lightgray;
+			border-radius: 50%;
 
-
-			@media #{$tab}{
-				font-size: 1.4rem;
+			@media #{$tab} {
 				width: 3.5rem;
 				height: 3.5rem;
+				font-size: 1.4rem;
 			}
 
 			//____________________________
 			// モディファイア
 			//____________________________
 			&.-disabled {
-				opacity: 0.7;
 				text-decoration: none;
+				opacity: 0.7;
 			}
 		}
 
-		.prev, .next {
+		.prev ,
+		.next {
 			margin: 0 2rem;
 			font-size: 1.3rem;
 			font-weight: 500;
-			@include poppins;
 			text-decoration: underline;
 			border: none;
 
-			@media #{$tab}{
+			@media #{$tab} {
 				margin: 0 1rem;
-
 			}
 		}
 
 		.current {
-			border: .1rem solid $primary;
-			background-color: $primary;
 			color: $white_fff;
+			background-color: $primary;
+			border: 0.1rem solid $primary;
 		}
 	}
 }

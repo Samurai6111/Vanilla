@@ -365,15 +365,36 @@ add_filter('send_password_change_email', '__return_false');
 // パスワードリセット時に管理者へ送信されるメール
 add_filter('wp_password_change_notification_email', '__return_false');
 
+
 /**
- * 管理画面のfooterにコードを追記する
- */
-function vanilla_admin_footer() {
-	global $pagenow;
-	if ($pagenow === 'post.php') {
+* 管理画面でタームの親、子、孫階層のそれぞれだけを表示する
+*/
+function add_custom_button_to_category_page() {
+	global $taxonomy;
+
+	$parent_only_url = admin_url("/edit-tags.php?taxonomy={$taxonomy}&level=");
+	$taxonomy_depth = vanilla_get_taxonomy_depth($taxonomy);
+	$level = (isset($_GET['level'])) ? $_GET['level'] : 0;
+
 ?>
-		<script src="<?php echo get_template_directory_uri(); ?>/Assets/Js/Custom/admin-custom.js"></script>
-	<?php } ?>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+
+			let target = $('.tablenav.top .actions');
+			<?php for ($i = 0; $i <= $taxonomy_depth; $i++) {  ?>
+				var show_parent_button = $('<a href="<?php echo $parent_only_url . $i ?>" class="button action" style="margin-right:6px"></a>').text('<?php echo $i ?>階層のみ');
+				target.append(show_parent_button);
+
+			<?php } ?>
+
+			<?php if (isset($_GET['level'])) { ?>
+				let tbody = $('.wp-list-table tbody')
+				tbody.find('tr').hide()
+				tbody.find('tr.level-<?php echo $level ?>').show()
+			<?php } ?>
+		});
+	</script>
 <?php
 }
-add_action('admin_footer', 'vanilla_admin_footer');
+add_action('admin_footer-edit-tags.php', 'add_custom_button_to_category_page');

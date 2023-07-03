@@ -1,0 +1,27 @@
+id,top,2nd,3rd,スラッグ,種類,CMS,内容,親ページ,テンプレートファイル,
+1,トップ,,,front,固定ページ,○,,,/Pages/page-front.php,
+2,,会社概要,,company,固定ページ,,,,/Pages/page-company.php,オフショア
+4,,ブランドページ（まっぷるマガジン）,,mapple-magazine,固定ページ,○,ブランドページは全ページ同じテンプレートを使用する,,/Pages/page-brand.php,オフショア
+4,,ブランドページ（こトリップ）,,kotrip,固定ページ,○,,,/Pages/page-brand.php,オフショア
+4,,ブランドページ（山と高原地図）,,yama-to-kogenchizu,固定ページ,○,,,/Pages/page-brand.php,オフショア
+4,,ブランドページ（touring mapple）,,touring-mapple,固定ページ,○,,,/Pages/page-brand.php,オフショア
+4,,ブランドページ（キッズ・ファミリー）,,kids-family,固定ページ,○,,,/Pages/page-brand.php,オフショア
+4,,ブランドページ（定番地図）,,map,固定ページ,○,,,/Pages/page-brand.php,オフショア
+4,,ブランドページ（話題の本）,,popular-books,固定ページ,○,,,/Pages/page-brand.php,オフショア
+5,,ソリューション・サービス一覧,,solution-service,アーカイブページ,○,"カスタム投稿「ソリューション・サービス」のアーカイブページ
+＊タームによる絞り込みあり",,/archive-solution-service.php,オフショア
+6,,,サービス詳細,,シングルページ,○,カスタム投稿「ソリューション・サービス」の詳細ページ,,/single-solution-service.php,オフショア
+7,,事例一覧,,case,アーカイブページ,○,カスタム投稿「事例」のアーカイブページ,,/archive-case.php,オフショア
+8,,,事例詳細,,シングルページ,○,カスタム投稿「事例」の詳細ページ,,/single-case.php,オフショア
+9,,出版物一覧,,publications,固定ページ,○,"投稿「出版物」のアーカイブページ
+＊タームによる絞り込みあり",,/index.php,
+10,,絞り込み結果ページ,,search,固定ページ,○,投稿「出版物」のアーカイブページ（検索結果ページ）,出版物一覧,/Pages/page-search.php,
+11,,,出版物詳細,,シングルページ,○,投稿「出版物」の詳細ページ（検索結果ページ）,,/single.php,
+12,,お知らせ,,news,アーカイブページ,○,"カスタム投稿「お知らせ」のアーカイブページ
+＊タームによる絞り込みあり",,/archive-news.php,オフショア
+13,,,お知らせ詳細,,シングルページ,○,カスタム投稿「お知らせ」の詳細ページ,,/single-news.php,
+14,,書店の方へ,,forstore,固定ページ,○,PDF添付機能・お知らせ掲載,,/Pages/page-forstore.php,オフショア
+,,,よくある質問,faq,固定ページ,,,書店の方へ,/Pages/page-faq.php,オフショア
+15,,お問い合わせ 入力ページ,,contact,固定ページ,○,お知らせをいくつかのパターンごとにだし分け,,/Pages/page-contact.php,
+16,,,お問い合わせ 確認ページ,confirm,固定ページ,○,,お問い合わせ 入力ページ,,
+17,,,お問い合わせ 完了ページ,thanks,固定ページ,○,,お問い合わせ 入力ページ,,オフショア

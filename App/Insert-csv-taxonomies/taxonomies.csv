@@ -1,0 +1,6 @@
+ID,タクソノミー,名前,投稿タイプ
+1,location,都道府県（海外含む）,post
+2,genre,ジャンル,post
+3,case_taxonomy,事例カテゴリ,case
+4,news_taxonomy,お知らせカテゴリ,news
+5,solution_taxonomy,課題カテゴリ,solution-service
