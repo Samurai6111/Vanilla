@@ -398,3 +398,46 @@ function add_custom_button_to_category_page() {
 <?php
 }
 add_action('admin_footer-edit-tags.php', 'add_custom_button_to_category_page');
+
+
+/**
+ * クライアントがログインした時にカスタムフィールドが設定されている固定ページだけを表示する
+ *
+ * @param
+ * @return
+ */
+function vanilla_show_only_acf_pages($query) {
+	global $current_user;
+	// 管理画面かつメインクエリの場合にのみ実行
+	if (
+		$current_user->user_login === 'クライアントのユーザー名が入ります' &&
+		is_admin() &&
+		$query->is_main_query()
+	) {
+
+		if ($query->get('post_type') === 'page') {
+
+			//== カスタムフィールドが設定されている固定ページのIDの配列 ====
+			$acf_page_id_array = [
+				get_page_by_path('front')->ID,
+
+			];
+
+			$query->set('post__in', $acf_page_id_array);
+			$query->set('orderby', 'post__in');
+		}
+	}
+}
+// add_action('pre_get_posts', 'vanilla_show_only_acf_pages');
+
+
+/**
+* 固定ページのリッチエディタをセクションごと削除
+*
+* @param
+* @return
+*/
+function vanilla_remove_editor() {
+  remove_post_type_support('page', 'editor');
+}
+add_action('admin_init', 'vanilla_remove_editor');

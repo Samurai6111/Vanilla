@@ -6,13 +6,13 @@
 // ---------- プライマリーカラー ----------
 $primary: #ff0000;
 // ---------- 白、黒、グレー系 ----------
-$black_000: #000;
+$black_000: #000000;
 $black_333: #333333;
-$white_fff: #fff;
+$white_fff: #ffffff;
 $white_fcf: #fcfcfc;
-$lightgray_F7F : #f7f7f7;
+$lightgray_F7F: #f7f7f7;
 $gray_dbd: #dbdbdb;
-$lightgray_ddd : #dddddd;
+$lightgray_ddd: #dddddd;
 
 // ---------- その他 ----------
 $green_4ab: #4abdac;
@@ -98,8 +98,8 @@ $one_margin: calc(calc(100vw - #{$inner}) / 2);
 		left: 0;
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
 		margin: auto;
+		object-fit: cover;
 	}
 }
 
@@ -150,4 +150,16 @@ $one_margin: calc(calc(100vw - #{$inner}) / 2);
 */
 @function responsiveValue($pc, $sp, $base-vw: 1356px) {
 	@return clamp($sp, vw($pc, $base-vw) , $pc);
+}
+
+//--------------------------------
+// ホバーのmixin
+//
+// @param
+@mixin hover($element: '') {
+	@media (hover: hover) {
+		&:where(:any-link, :enabled, summary):hover #{$element} {
+			@content;
+		}
+	}
 }
