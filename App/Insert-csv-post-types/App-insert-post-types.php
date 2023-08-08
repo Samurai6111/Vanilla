@@ -69,7 +69,7 @@ function insert_post_types() {
 					],
 					//投稿タイプの設定
 					'public' => true, //公開するかしないか(デフォルト"true")
-					'has_archive' => true, //trueにすると投稿した記事のアーカイブページを生成
+					'has_archive' => false, //アーカイブページは固定ページで生成
 					'menu_position' => 5, // 管理画面上でどこに配置するか
 					'hierarchical' => true, // 投稿同士の階層
 					//投稿編集ページの設定

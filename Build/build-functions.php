@@ -553,3 +553,17 @@ function vanilla_get_default_post_contents() {
 
 return $post_content;
 }
+
+/**
+ * 配列の中のキーのindex番号を取得する関数
+ *
+ * @param string $key
+ * @param array $array
+ * @return int $index
+ */
+function i($key, $array) {
+
+	$index = array_search($key, $array);
+
+	return $index;
+}
