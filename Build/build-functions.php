@@ -567,3 +567,21 @@ function i($key, $array) {
 
 	return $index;
 }
+
+
+/**
+* 本番ドメインの条件分岐
+*
+* @param
+* @return
+*/
+function is_honban() {
+	if (
+		$_SERVER['HTTP_HOST'] == 'www.本番のドメイン' ||
+		$_SERVER['HTTP_HOST'] == '本番のドメイン'
+	) {
+		return true;
+	} else {
+		return false;
+	}
+}
