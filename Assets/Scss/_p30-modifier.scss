@@ -119,3 +119,11 @@ table.-sp-only {
 		display: none;
 	}
 }
+
+.-text-2-row {
+	display: -webkit-box;
+	overflow: hidden;
+
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
