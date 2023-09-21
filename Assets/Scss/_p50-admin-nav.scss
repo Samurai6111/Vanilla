@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+
+.adminNav {
+	position: fixed;
+	bottom: 1rem;
+	left: 1rem;
+	flex-direction: column;
+	z-index: 9999;
+	display: flex;
+	padding: 0.8rem;
+	background-color: white;
+	box-shadow: 0.4rem 0.4rem 0.8rem rgba(black, 0.3);
+	border: 1px solid black;
+
+	gap: 0.4rem;
+
+	.adminNav__caption {
+		font-size: 1rem;
+	}
+
+	.adminNav__close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: white;
+		font-size: 1.6rem;
+		line-height: 1;
+		background-color: black;
+		transform: translate(50%, -50%);
+		cursor: pointer;
+	}
+
+	.adminNav__item {
+		align-items: center;
+		display: flex;
+
+		gap: 0.4rem;
+	}
+}

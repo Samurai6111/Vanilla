@@ -584,7 +584,7 @@ table.-sp-only {
 }
 
 .-color-white {
-  color: #fff;
+  color: #ffffff;
 }
 
 .-bg-primary {
@@ -592,7 +592,7 @@ table.-sp-only {
 }
 
 .-bg-white {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .-flex {
@@ -652,6 +652,13 @@ table.-sp-only {
   display: none;
 }
 
+.-text-2-row {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .js__accordion__header {
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -665,6 +672,57 @@ table.-sp-only {
 
 .js__accordion__header + * {
   display: none;
+}
+
+.adminNav {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.8rem;
+  background-color: white;
+  -webkit-box-shadow: 0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+  border: 1px solid black;
+  gap: 0.4rem;
+}
+
+.adminNav .adminNav__caption {
+  font-size: 1rem;
+}
+
+.adminNav .adminNav__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1;
+  background-color: black;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  cursor: pointer;
+}
+
+.adminNav .adminNav__item {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.4rem;
 }
 
 .buttonType1 {
@@ -685,12 +743,12 @@ table.-sp-only {
   height: 5rem;
   max-width: 32rem;
   text-align: center;
-  border: 0.1rem solid #000;
+  border: 0.1rem solid #000000;
   border-radius: 0.4rem;
 }
 
 .buttonType1 .buttonType1__text {
-  color: #000;
+  color: #000000;
   font-size: clamp(1.4rem, 1.17994vw, 1.6rem);
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -751,7 +809,7 @@ table.-sp-only {
 }
 
 .buttonType1.-bg-white {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .buttonType1.-border-none {
@@ -759,7 +817,7 @@ table.-sp-only {
 }
 
 .buttonType1.-color-black .buttonType1__text {
-  color: #000;
+  color: #000000;
 }
 
 .buttonType1.-border-lightgray {
@@ -897,7 +955,7 @@ table.-sp-only {
 }
 
 .calendarComponent .calendarForm .calendarTable .calendarTable__tbody .calendarTable__tr .calendarTable__td.-is-today .calendarTable__day {
-  color: #fff;
+  color: #ffffff;
 }
 
 .calendarComponent .calendarForm .calendarTable .calendarTable__tbody .calendarTable__tr .calendarTable__td.-is-holiday {
@@ -908,19 +966,19 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-y: scroll;
-  color: #000;
+  color: #000000;
   font-size: 62.5%;
   line-height: 1.65;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #000;
+  color: #000000;
   font-family: 'Noto Sans JP', sans-serif;
   letter-spacing: 0.04em;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 #top {
@@ -952,7 +1010,7 @@ body {
   display: none;
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background-color: #000000;
 }
 
 .gnav .gnav__inner {
@@ -1157,7 +1215,7 @@ body {
   left: 50%;
   width: 100%;
   height: 0.1rem;
-  background-color: #000;
+  background-color: #000000;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -1186,7 +1244,7 @@ body {
 }
 
 .hamburger_wrap .-active .hamburger_line {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .hamburger_wrap .-active .hamburger_line.-top {
@@ -1210,7 +1268,7 @@ body {
 }
 
 .hamburger_wrap .-active .hamburger_text {
-  color: #fff;
+  color: #ffffff;
 }
 
 .headerWrap .header {
@@ -1296,7 +1354,7 @@ body {
 }
 
 .headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem.current-menu-item > a {
-  border-bottom: 0.3rem solid #000;
+  border-bottom: 0.3rem solid #000000;
 }
 
 .headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem.-entry a {
@@ -1304,7 +1362,7 @@ body {
   padding: 0.8rem;
   margin-right: 0;
   text-align: center;
-  border: 1px solid #000;
+  border: 1px solid #000000;
   border-radius: 10rem;
 }
 
@@ -1321,7 +1379,7 @@ body {
   width: 18rem;
   max-width: 18rem;
   padding: 1.4rem 1.1rem;
-  background-color: #000;
+  background-color: #000000;
 }
 
 .headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem .sub-menu .menu-item {
@@ -1336,7 +1394,7 @@ body {
 }
 
 .headerWrap .header .header__flex .header__navWrap .header__nav .header__navItem .sub-menu .menu-item > a {
-  color: #fff;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -1574,7 +1632,7 @@ body {
   height: 100%;
   padding: 0rem 0.6rem;
   margin-top: 0.6rem;
-  color: #fff;
+  color: #ffffff;
   content: '必須';
   font-size: 1.2rem;
   font-weight: 500;
@@ -1838,7 +1896,7 @@ body {
 }
 
 .pageContact .contactForm__inputText #insurance_link.-pen {
-  color: #000;
+  color: #000000;
   text-decoration: none;
   pointer-events: none;
 }
@@ -2023,7 +2081,7 @@ body {
   width: 100%;
   height: 7rem;
   max-width: 42rem;
-  color: #fff;
+  color: #ffffff;
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -2040,7 +2098,7 @@ body {
   letter-spacing: 0.02em;
   background-color: transparent;
   border: none;
-  border-bottom: 0.1rem solid #000;
+  border-bottom: 0.1rem solid #000000;
   outline: none;
 }
 
@@ -2138,7 +2196,7 @@ body {
   display: flex;
   width: 1.8rem;
   height: 1.8rem;
-  color: #fff;
+  color: #ffffff;
   content: '!';
   background-color: #ff0000;
   border-radius: 50%;
@@ -2155,7 +2213,7 @@ body {
   display: flex;
   padding: 0 1.6rem;
   font-size: 1.5rem;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__input .contactForm__prefecture::after, .pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__input::after, .pageContact .mw_wp_form.mw_wp_form_confirm .contactForm__input::before {
@@ -2306,7 +2364,7 @@ body {
 }
 
 .pagination .pagination__item .current {
-  color: #fff;
+  color: #ffffff;
   background-color: #ff0000;
   border: 0.1rem solid #ff0000;
 }

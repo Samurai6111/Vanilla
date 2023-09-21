@@ -14,6 +14,7 @@
 ?>
 
 <?php wp_footer(); ?>
+<?php require_once(get_theme_file_path() . "/Assets/Components/c-admin-nav.php") ?>
 </body>
 
 </html>
