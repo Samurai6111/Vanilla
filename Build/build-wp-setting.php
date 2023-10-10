@@ -441,3 +441,18 @@ function vanilla_remove_editor() {
   remove_post_type_support('page', 'editor');
 }
 add_action('admin_init', 'vanilla_remove_editor');
+
+/**
+* サイト内検索で濁音、半濁音、カタカナを区別できるようにする設定
+*
+* @param string $where
+* @param string $q
+* @return $where
+*/
+function vanilla_custom_search_setting( $where, \WP_Query $q ) {
+	if (!$q->is_admin() ) {
+			$where = str_replace( 'LIKE', 'LIKE BINARY', $where );
+	}
+	return $where;
+}
+add_filter( 'posts_where', 'vanilla_custom_search_setting', 10, 2 );
