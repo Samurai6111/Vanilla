@@ -1479,11 +1479,11 @@ body {
 }
 
 .page404 {
-  padding: 8rem 0;
+  padding: 20rem 0 12rem;
 }
 
 .page404 .page404__title {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   font-size: 3.2rem;
   font-weight: 600;
   text-align: center;
@@ -1496,7 +1496,7 @@ body {
 }
 
 .page404 .page404__text {
-  margin-bottom: 2.4rem;
+  margin-bottom: 2rem;
   font-size: 1.6rem;
   text-align: center;
 }
@@ -1509,14 +1509,15 @@ body {
 
 .page404 .page404__link {
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  text-align: center;
   text-align: center;
   text-decoration: underline;
 }
 
 @media only screen and (max-width: 768px) {
   .page404 .page404__link {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -3216,4 +3217,47 @@ body {
   display: inline-block;
   content: '';
   text-decoration: none;
+}
+
+.page404 {
+  padding: 20rem 0 12rem;
+}
+
+.page404 .page404__title {
+  margin-bottom: 2rem;
+  font-size: 3.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .page404 .page404__title {
+    font-size: 2.4rem;
+  }
+}
+
+.page404 .page404__text {
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .page404 .page404__text {
+    font-size: 1.4rem;
+  }
+}
+
+.page404 .page404__link {
+  display: block;
+  font-size: 1.4rem;
+  text-align: center;
+  text-align: center;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .page404 .page404__link {
+    font-size: 1.2rem;
+  }
 }

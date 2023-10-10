@@ -1,8 +1,8 @@
 .page404 {
-	padding: 8rem 0;
+	padding: 20rem 0 12rem;
 
 	.page404__title {
-		margin-bottom: 4rem;
+		margin-bottom: 2rem;
 		font-size: 3.2rem;
 		font-weight: 600;
 		text-align: center;
@@ -13,7 +13,7 @@
 	}
 
 	.page404__text {
-		margin-bottom: 2.4rem;
+		margin-bottom: 2rem;
 		font-size: 1.6rem;
 		text-align: center;
 
@@ -24,12 +24,13 @@
 
 	.page404__link {
 		display: block;
-		font-size: 1.6rem;
+		font-size: 1.4rem;
+		text-align: center;
 		text-align: center;
 		text-decoration: underline;
 
 		@media #{$tab} {
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 		}
 	}
 }
