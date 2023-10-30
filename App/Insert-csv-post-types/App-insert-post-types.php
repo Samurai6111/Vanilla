@@ -1,46 +1,34 @@
 <?php
-
-
-//*--------------------------------------------------
-/* カスタム投稿の登録 hookの優先度は「20」」
-/*------------------------------------------------*/
-$priority = 20;
-
-
-// ---------- 優先度のリセット ----------
-$priority = false;
-
-
 //--------------------------------------------------
-// 管理画面「投稿 →「出版物」に変更
+// 管理画面「投稿 →「読み物」に変更
 //--------------------------------------------------
+add_action( 'admin_menu', 'vanilla_change_post_menu_label' );
+add_action( 'init', 'vanilla_change_post_object_label' );
+
 function vanilla_change_post_menu_label() {
-
-	global $menu;
-	global $submenu;
-	$menu[5][0] = '出版物';
-	$submenu['edit.php'][5][0] = '出版物一覧';
-	$submenu['edit.php'][10][0] = '新しい出版物';
-	$submenu['edit.php'][16][0] = 'タグ';
+    global $menu;
+    global $submenu;
+    $menu[5][0] = '読み物';
+    $submenu['edit.php'][5][0] = '読み物一覧';
+    $submenu['edit.php'][10][0] = '新しい読み物';
+    echo '';
 }
-add_action('admin_menu', 'vanilla_change_post_menu_label');
 
 function vanilla_change_post_object_label() {
-
-	global $wp_post_types;
-	$labels = &$wp_post_types['post']->labels;
-	$labels->name = '出版物';
-	$labels->singular_name = '出版物';
-	$labels->add_new = _x('追加', '出版物');
-	$labels->add_new_item = '出版物の新規追加';
-	$labels->edit_item = '出版物の編集';
-	$labels->new_item = '新規出版物';
-	$labels->view_item = '出版物を表示';
-	$labels->search_items = '出版物を検索';
-	$labels->not_found = '記事が見つかりませんでした';
-	$labels->not_found_in_trash = 'ゴミ箱に記事は見つかりませんでした';
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = '読み物';
+    $labels->singular_name = '読み物';
+    $labels->add_new = '新しい読み物';
+    $labels->add_new_item = '新しい読み物を追加';
+    $labels->edit_item = '読み物を編集';
+    $labels->new_item = '新しい読み物';
+    $labels->view_item = '読み物を表示';
+    $labels->search_items = '読み物を検索';
+    $labels->not_found = '読み物が見つかりませんでした';
+    $labels->not_found_in_trash = 'ゴミ箱に読み物が見つかりませんでした';
 }
-add_action('init', 'vanilla_change_post_object_label');
+
 
 
 function insert_post_types() {
