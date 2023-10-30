@@ -1,152 +1,37 @@
-ID,大分類,中分類,小分類,スラッグ,親ターム名,投稿タイプ,taxonomy,備考
-1,国内,,,domestic,,post,location,
-2,,北海道エリア,,hokkaido-region,国内,post,location,
-3,,,北海道,hokkaido,北海道エリア,post,location,
-4,,東北エリア,,tohoku-region,国内,post,location,
-5,,,青森県,aomori,東北エリア,post,location,
-6,,,岩手県,iwate,東北エリア,post,location,
-7,,,宮城県,miyagi,東北エリア,post,location,
-8,,,秋田県,akita,東北エリア,post,location,
-9,,,山形県,yamagata,東北エリア,post,location,
-10,,,福島県,fukushima,東北エリア,post,location,
-11,,関東エリア,,kanto-region,国内,post,location,
-12,,,茨城県,ibaraki,関東エリア,post,location,
-13,,,栃木県,tochigi,関東エリア,post,location,
-14,,,群馬県,gunma,関東エリア,post,location,
-15,,,埼玉県,saitama,関東エリア,post,location,
-16,,,千葉県,chiba,関東エリア,post,location,
-17,,,東京都,tokyo,関東エリア,post,location,
-18,,,神奈川県,kanagawa,,post,location,
-19,,北陸エリア,,hokuriku-region,国内,post,location,
-20,,,福井県,fukui,北陸エリア,post,location,
-21,,,富山県,toyama,北陸エリア,post,location,
-22,,,石川県,ishikawa,北陸エリア,post,location,
-23,,甲信越エリア,,koshinetsu-region,国内,post,location,
-24,,,新潟県,niigata,甲信越エリア,post,location,
-25,,,山梨県,yamanashi,甲信越エリア,post,location,
-26,,,長野県,nagano,甲信越エリア,post,location,
-27,,東海エリア,,tokai-region,国内,post,location,
-28,,,岐阜県,gifu,東海エリア,post,location,
-29,,,静岡県,shizuoka,東海エリア,post,location,
-30,,,愛知県,aichi,東海エリア,post,location,
-31,,,三重県,mie,東海エリア,post,location,
-32,,近畿エリア,,kinki-region,国内,post,location,
-33,,,滋賀県,shiga,近畿エリア,post,location,
-34,,,京都府,kyoto,近畿エリア,post,location,
-35,,,大阪府,osaka,近畿エリア,post,location,
-36,,,兵庫県,hyogo,近畿エリア,post,location,
-37,,,奈良県,nara,近畿エリア,post,location,
-38,,,和歌山県,wakayama,近畿エリア,post,location,
-39,,中国エリア,,chugoku-region,国内,post,location,
-40,,,鳥取県,tottori,中国エリア,post,location,
-41,,,島根県,shimane,中国エリア,post,location,
-42,,,岡山県,okayama,中国エリア,post,location,
-43,,,広島県,hiroshima,中国エリア,post,location,
-44,,,山口県,yamaguchi,中国エリア,post,location,
-45,,四国エリア,,shikoku-region,国内,post,location,
-46,,,徳島県,tokushima,四国エリア,post,location,
-47,,,香川県,kagawa,四国エリア,post,location,
-48,,,愛媛県,ehime,四国エリア,post,location,
-49,,,高知県,kochi,四国エリア,post,location,
-50,,九州エリア,,kyushu-region,国内,post,location,
-51,,,福岡県,fukuoka,九州エリア,post,location,
-52,,,佐賀県,saga,九州エリア,post,location,
-53,,,長崎県,nagasaki,九州エリア,post,location,
-54,,,熊本県,kumamoto,九州エリア,post,location,
-55,,,大分県,oita,九州エリア,post,location,
-56,,,宮崎県,miyazaki,九州エリア,post,location,
-57,,,鹿児島県,kagoshima,九州エリア,post,location,
-58,,沖縄エリア,,okinawa-region,国内,post,location,
-59,,,沖縄県,okinawa,沖縄地方,post,location,
-60,,全国エリア,,all-prefecture-region,国内,post,location,
-61,,,全国,all-prefecture,全国地方,post,location,
-62,海外,,,oversea,,post,location,
-63,,エリア,,oversea-region,海外,post,location,
-64,,,東アジア,east-asia,エリア,post,location,
-65,,,東南アジア,southeast-asia,エリア,post,location,
-66,,,ヨーロッパ,europe,エリア,post,location,
-67,,,アメリカ,america,エリア,post,location,
-68,,,ハワイ・グアム,hawaii-guam,エリア,post,location,
-69,,,オセアニア,oceania,エリア,post,location,
-70,,,その他,other,エリア,post,location,
-71,国内旅行ガイド,,,domestic-travel-guide,,post,genre,
-72,,まっぷる,,mapuru,国内旅行ガイド,post,genre,
-73,,まっぷるテーマ版,,mapuru-theme-edition,国内旅行ガイド,post,genre,
-74,,ことりっぷ,,kotorippu,国内旅行ガイド,post,genre,
-75,,ことりっぷマガジン,,kotorippu-magazine,国内旅行ガイド,post,genre,
-76,,COLOR +,,color-plus,国内旅行ガイド,post,genre,
-77,,その他の国内ガイド,,other-domestic-guides,国内旅行ガイド,post,genre,
-78,海外旅行ガイド,,,international-travel-guide,,post,genre,
-79,,まっぷる海外版,,mapuru-international-edition,海外旅行ガイド,post,genre,
-80,,ことりっぷ海外版,,kotorippu-international-edition,海外旅行ガイド,post,genre,
-81,,旅行会話集,,travel-conversation-guide,海外旅行ガイド,post,genre,
-82,,その他の海外ガイド,,other-international-guides,海外旅行ガイド,post,genre,
-83,地図,,,maps,,post,genre,
-84,,道路地図,,road-maps,地図,post,genre,
-85,,街歩き地図,,city-walking-maps,地図,post,genre,
-86,,大判・１枚地図,,large-single-sheet-maps,地図,post,genre,
-87,,世界地図・日本地図,,world-maps-japan-maps,地図,post,genre,
-88,,山と高原地図,,mountain-highland-maps,地図,post,genre,
-89,,ツーリングマップル,,touring-maple,地図,post,genre,
-90,,その他の地図,,other-maps,地図,post,genre,
-91,書籍・知識,,,books-knowledge,,post,genre,
-92,,「トリセツ」シリーズ,,torisetsu-series,書籍・知識,post,genre,
-93,,「地図でスッと」シリーズ,,chizu-de-sutto-series,書籍・知識,post,genre,
-94,,その他の書籍,,other-books,書籍・知識,post,genre,
-95,児童書,,,children-books,,post,genre,
-96,,まっぷるキッズ,,mapuru-kids,児童書,post,genre,
-97,,まっぷるキッズはっておぼえる,,mapuru-kids-hatteoboeru,児童書,post,genre,
-98,,地図図鑑・地球儀,,map-encyclopedia-globe,児童書,post,genre,
-99,,その他の児童書,,other-children-books,児童書,post,genre,
-100,その他,,,other,,post,genre,
-101,,カレンダー,,calendar,その他,post,genre,
-102,,その他,,uncategoriesed,その他,post,genre,
-103,エリアプロモーションを行いたい,,,area-promotion,,solution-service,solution_taxonomy,
-104,,観光誘客のプロモーションを行いたい ,,trip-promotion,エリアプロモーションを行いたい,solution-service,solution_taxonomy,
-105,,インバウンドプロモーションを実施・強化したい,,inbound-promotion,エリアプロモーションを行いたい,solution-service,solution_taxonomy,
-106,,地方創生・地域の認知度を高めたい,,local-development,エリアプロモーションを行いたい,solution-service,solution_taxonomy,
-107,,移住・定住促進をしたい、シティプロモーションをしたい,,city-promotion,エリアプロモーションを行いたい,solution-service,solution_taxonomy,
-108,貴社・貴社商品をプロモーション行いたい,,,company-product-promotion,,solution-service,solution_taxonomy,
-109,,商品のプロモーションをしたい,,product-promotion,貴社・貴社商品をプロモーション行いたい,solution-service,solution_taxonomy,
-110,,イベントプロモーションしたい,,event-promotion,貴社・貴社商品をプロモーション行いたい,solution-service,solution_taxonomy,
-111,,周年事業をPRしたい,,anniversary-promotion,貴社・貴社商品をプロモーション行いたい,solution-service,solution_taxonomy,
-112,,ガイドブックに広告を掲載したい,,guide-advertisement,貴社・貴社商品をプロモーション行いたい,solution-service,solution_taxonomy,
-113,地図の制作・活用をしたい,,,map-practice,,solution-service,solution_taxonomy,
-114,,オリジナルの地図を制作したい,,original-map-creation,地図の制作・活用をしたい,solution-service,solution_taxonomy,
-115,,営業エリアを可視化したい,,sales-area-visualization,地図の制作・活用をしたい,solution-service,solution_taxonomy,
-116,,地図を活用した防災対策をしたい,,hazard-map-practice,地図の制作・活用をしたい,solution-service,solution_taxonomy,
-117,,観光パンフレット・観光マップを作成したい,,pamphlet-creation,地図の制作・活用をしたい,solution-service,solution_taxonomy,
-118,弊社製品・サービスとコラボレーションしたい,,,collaboration,,solution-service,solution_taxonomy,
-119,,ノベルティを作成したい,,novelty-creation,弊社製品・サービスとコラボレーションしたい,solution-service,solution_taxonomy,
-120,,特注冊子をつくりたい,,special-booklet-creation,弊社製品・サービスとコラボレーションしたい,solution-service,solution_taxonomy,
-121,,ことりっぷとコラボしたい,,kotrip-collaboration,弊社製品・サービスとコラボレーションしたい,solution-service,solution_taxonomy,
-122,,Web・アプリを活用したプロモーションをしたい,,web-promotion,弊社製品・サービスとコラボレーションしたい,solution-service,solution_taxonomy,
-123,書籍・地図を購入したい,,,map-purchase,,solution-service,solution_taxonomy,
-124,ニュースリリース,,,news-release,,news,news_taxonomy,
-125,新刊・改訂版のご案内,,,new-book-notice,,news,news_taxonomy,
-126,キャンペーン・イベント,,,campaign,,news,news_taxonomy,
-127,メディア掲載情報,,,media-publication,,news,news_taxonomy,
-128,採用情報,,,recruit,,news,news_taxonomy,
-129,サステナビリティ,,,sustainability,,news,news_taxonomy,
-130,お詫びと訂正,,,apology,,news,news_taxonomy,
-131,その他のお知らせ,,,other,,news,news_taxonomy,
-132,ソリューション種別,,,solution-types,,case,case_taxonomy,
-133,,誌面広告（純広告／タイアップ記事広告）,,magazine-advertisement,ソリューション種別,case,case_taxonomy,
-134,,WEB広告,,web-advertisement,ソリューション種別,case,case_taxonomy,
-135,,タイアップ出版,,tie-up-publishing,ソリューション種別,case,case_taxonomy,
-136,,オリジナル冊子／ツール制作,,original-booklet-tool-production,ソリューション種別,case,case_taxonomy,
-137,,地図制作,,map-production,ソリューション種別,case,case_taxonomy,
-138,,パネル制作,,panel-production,ソリューション種別,case,case_taxonomy,
-139,,コラボレーション商品,,collaboration-products,ソリューション種別,case,case_taxonomy,
-140,,イベント,,event,ソリューション種別,case,case_taxonomy,
-141,業種,,,industry,,case,case_taxonomy,
-142,,官公庁・自治体・特殊法人,,government-offices,業種,case,case_taxonomy,
-143,,政府観光局・観光協会・DMO,,government-tourist,業種,case,case_taxonomy,
-144,,航空・鉄道・バス・タクシー,,transportation,業種,case,case_taxonomy,
-145,,旅行・観光レジャー・宿泊,,travel,業種,case,case_taxonomy,
-146,,メーカー,,manufacturer,業種,case,case_taxonomy,
-147,,小売・サービス,,retail-service,業種,case,case_taxonomy,
-148,,飲食店,,restaurant,業種,case,case_taxonomy,
-149,,物流・運送・配送,,logistics-delivery,業種,case,case_taxonomy,
-150,,エネルギー,,energy,業種,case,case_taxonomy,
-151,,その他,,others,業種,case,case_taxonomy,
+ID	大分類	中分類	小分類	スラッグ	親ターム名	post_type	taxonomy	備考
+1	医学生向け			medical-student		post,movie,interview,manga,quiz	post_tag
+2	初期研修医向け			initial-trainee		post,movie,interview,manga,quiz	post_tag
+3	専攻医向け			specialist-trainee		post,movie,interview,manga,quiz	post_tag
+4	医師向け			doctor		post,movie,interview,manga,quiz	post_tag
+5	内科			internal-medicine		post,movie,interview,manga,quiz	post_tag
+6	小児科			pediatrics		post,movie,interview,manga,quiz	post_tag
+7	皮膚科			dermatology		post,movie,interview,manga,quiz	post_tag
+8	精神科			psychiatry		post,movie,interview,manga,quiz	post_tag
+9	外科			surgery		post,movie,interview,manga,quiz	post_tag
+10	整形外科			orthopedics		post,movie,interview,manga,quiz	post_tag
+11	産婦人科			obstetrics-gynecology		post,movie,interview,manga,quiz	post_tag
+12	眼科			ophthalmology		post,movie,interview,manga,quiz	post_tag
+13	耳鼻咽喉科			otolaryngology		post,movie,interview,manga,quiz	post_tag
+14	泌尿器科			urology		post,movie,interview,manga,quiz	post_tag
+15	脳神経外科			neurosurgery		post,movie,interview,manga,quiz	post_tag
+16	放射線科			radiology		post,movie,interview,manga,quiz	post_tag
+17	麻酔科			anesthesiology		post,movie,interview,manga,quiz	post_tag
+18	病理			pathology		post,movie,interview,manga,quiz	post_tag
+19	臨床検査			clinical-examination		post,movie,interview,manga,quiz	post_tag
+20	救急科			emergency-medicine		post,movie,interview,manga,quiz	post_tag
+21	形成外科			plastic-surgery		post,movie,interview,manga,quiz	post_tag
+22	リハビリテーション科			rehabilitation		post,movie,interview,manga,quiz	post_tag
+23	総合診療			general-practice		post,movie,interview,manga,quiz	post_tag
+24	オペ			surgery-operation		post,movie,interview,manga,quiz	post_tag
+25	画像診断			imaging-diagnosis		post,movie,interview,manga,quiz	post_tag
+26	コロナ			corona		post,movie,interview,manga,quiz	post_tag
+27	開業支援			practice-support		post,movie,interview,manga,quiz	post_tag
+28	企業			corporation		post,movie,interview,manga,quiz	post_tag
+29	ライフスタイル			lifestyle		post,movie,interview,manga,quiz	post_tag
+30	会員限定			members-only		post,movie,interview,manga,quiz	post_tag
+31	PR記事			pr-article		post,movie,interview,manga,quiz	post_tag
+32	期間限定			limited-time		post,movie,interview,manga,quiz	post_tag
+33	◯◯株式会社			company-name		post,movie,interview,manga,quiz	post_tag
+34	外部サービス			external-service		post,movie,interview,manga,quiz	post_tag
+35	オリジナル			original		post,movie,interview,manga,quiz	post_tag
+36	新着			new-arrivals		post,movie,interview,manga,quiz	post_tag

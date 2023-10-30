@@ -1,7 +1,4 @@
 <?php
-
-
-
 /**
 * csvからタクソノミーを一括挿入する関数
 *
@@ -12,10 +9,10 @@ function insert_taxonomies() {
 	$csv_path = get_theme_file_path() . "/App/Insert-csv-taxonomies/taxonomies.csv";
 	$csv = fopen($csv_path, 'r');
 
-	$th_array = fgetcsv($csv);
+	$th_array = fgetcsv($csv, null, '	');
 
 	$i = 0;
-	while (($data = fgetcsv($csv))  !== false) {
+	while (($data = fgetcsv($csv, null, '	')) !== false) {
 		++$i;
 		register_taxonomy(
 			$data[i('タクソノミー', $th_array)],

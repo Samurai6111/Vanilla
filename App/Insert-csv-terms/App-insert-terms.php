@@ -1,7 +1,4 @@
 <?php
-
-
-
 /**
  * csvからtermを一括で挿入する時のterm_nameを取得する関数
  *
@@ -48,7 +45,7 @@ function get_inserting_term_parent_id($data, $th_array) {
 }
 
 function vanilla_insert_term($csv, $th_array, $parent = 0) {
-	while (($data = fgetcsv($csv)) !== false) {
+	while (($data = fgetcsv($csv, null, '	')) !== false) {
 		//========================
 		//共通の変数
 		//========================
@@ -125,7 +122,7 @@ function insert_terms_from_csv() {
 	$csv_path = get_theme_file_path() . "/App/Insert-csv-terms/terms.csv";
 	$csv = fopen($csv_path, 'r');
 
-	$th_array = fgetcsv($csv);
+	$th_array = fgetcsv($csv, null, '	');
 
 	//= 挿入 ====
 	vanilla_insert_term($csv, $th_array);
@@ -135,4 +132,4 @@ function insert_terms_from_csv() {
 //========================
 //実行
 //========================
-// add_action('init', 'insert_terms_from_csv');
+add_action('init', 'insert_terms_from_csv');

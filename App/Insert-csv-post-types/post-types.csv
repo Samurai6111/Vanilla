@@ -1,5 +1,7 @@
-ID,投稿名,スラッグ
-1,出版物,post
-2,ソリューションサービス,solution-service
-3,事例,case
-4,お知らせ,news
+ID	投稿名	スラッグ
+1	記事・コラム	post
+2	動画	movie
+3	インタビュー	interview
+4	マンガ	comic
+5	クイズ	quiz
+6	メッセージ	message

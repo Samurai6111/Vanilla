@@ -50,11 +50,12 @@ function insert_post_types() {
 	//========================
 	//変数定義
 	//========================
-	$th_array = fgetcsv($csv);
+	$th_array = fgetcsv($csv, null, '	');
+
 	$post_type_supports = ['title', 'editor', 'thumbnail', 'page-attributes', 'post-formats'];
 
 
-	while (($data = fgetcsv($csv))  !== false) {
+	while (($data = fgetcsv($csv, null, '	')) !== false) {
 		if ($data[i('スラッグ', $th_array)] !== 'post') {
 
 			//========================
