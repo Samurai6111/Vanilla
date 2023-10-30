@@ -1,27 +1,28 @@
-id,top,2nd,3rd,スラッグ,種類,CMS,内容,親ページ,テンプレートファイル,
-1,トップ,,,front,固定ページ,○,,,/Pages/page-front.php,
-2,,会社概要,,company,固定ページ,,,,/Pages/page-company.php,オフショア
-4,,ブランドページ（まっぷるマガジン）,,mapple-magazine,固定ページ,○,ブランドページは全ページ同じテンプレートを使用する,,/Pages/page-brand.php,オフショア
-4,,ブランドページ（こトリップ）,,kotrip,固定ページ,○,,,/Pages/page-brand.php,オフショア
-4,,ブランドページ（山と高原地図）,,yama-to-kogenchizu,固定ページ,○,,,/Pages/page-brand.php,オフショア
-4,,ブランドページ（touring mapple）,,touring-mapple,固定ページ,○,,,/Pages/page-brand.php,オフショア
-4,,ブランドページ（キッズ・ファミリー）,,kids-family,固定ページ,○,,,/Pages/page-brand.php,オフショア
-4,,ブランドページ（定番地図）,,map,固定ページ,○,,,/Pages/page-brand.php,オフショア
-4,,ブランドページ（話題の本）,,popular-books,固定ページ,○,,,/Pages/page-brand.php,オフショア
-5,,ソリューション・サービス一覧,,solution-service,アーカイブページ,○,"カスタム投稿「ソリューション・サービス」のアーカイブページ
-＊タームによる絞り込みあり",,/archive-solution-service.php,オフショア
-6,,,サービス詳細,,シングルページ,○,カスタム投稿「ソリューション・サービス」の詳細ページ,,/single-solution-service.php,オフショア
-7,,事例一覧,,case,アーカイブページ,○,カスタム投稿「事例」のアーカイブページ,,/archive-case.php,オフショア
-8,,,事例詳細,,シングルページ,○,カスタム投稿「事例」の詳細ページ,,/single-case.php,オフショア
-9,,出版物一覧,,publications,固定ページ,○,"投稿「出版物」のアーカイブページ
-＊タームによる絞り込みあり",,/index.php,
-10,,絞り込み結果ページ,,search,固定ページ,○,投稿「出版物」のアーカイブページ（検索結果ページ）,出版物一覧,/Pages/page-search.php,
-11,,,出版物詳細,,シングルページ,○,投稿「出版物」の詳細ページ（検索結果ページ）,,/single.php,
-12,,お知らせ,,news,アーカイブページ,○,"カスタム投稿「お知らせ」のアーカイブページ
-＊タームによる絞り込みあり",,/archive-news.php,オフショア
-13,,,お知らせ詳細,,シングルページ,○,カスタム投稿「お知らせ」の詳細ページ,,/single-news.php,
-14,,書店の方へ,,forstore,固定ページ,○,PDF添付機能・お知らせ掲載,,/Pages/page-forstore.php,オフショア
-,,,よくある質問,faq,固定ページ,,,書店の方へ,/Pages/page-faq.php,オフショア
-15,,お問い合わせ 入力ページ,,contact,固定ページ,○,お知らせをいくつかのパターンごとにだし分け,,/Pages/page-contact.php,
-16,,,お問い合わせ 確認ページ,confirm,固定ページ,○,,お問い合わせ 入力ページ,,
-17,,,お問い合わせ 完了ページ,thanks,固定ページ,○,,お問い合わせ 入力ページ,,オフショア
+id	top	2nd	3rd	スラッグ	種類	親ページ	テンプレートファイル	scssファイル
+1	トップ			front	固定ページ		/Pages/page-front.php	/Assets/Scss/_p50-page-front.scss
+2		About		about	固定ページ		/Pages/page-about.php	/Assets/Scss/_p50-page-about.scss
+3		FAQ		faq	シングルページ		/Pages/page-faq.php	/Assets/Scss/_p50-page-faq.scss
+4		ログイン・新規会員登録		login	固定ページ		/Pages/page-login.php	/Assets/Scss/_p50-page-login.scss
+5		会員情報入力画面		registration	固定ページ		/Pages/page-registration.php	/Assets/Scss/_p50-page-registration.scss
+6		マイページ		mypage	固定ページ		/Pages/page-mypage.php	/Assets/Scss/_p50-page-mypage.scss
+7		登録情報確認		information	固定ページ	マイページ	/Pages/page-information.php	/Assets/Scss/_p50-page-information.scss
+8		登録情報変更		modify	固定ページ	マイページ	/Pages/page-modify.php	/Assets/Scss/_p50-page-modify.scss
+9		ログアウト		logout	固定ページ		/Pages/page-logout.php	/Assets/Scss/_p50-page-logout.scss
+10		パスワードを忘れた方		forgot-password	固定ページ		/Pages/page-forgot-password.php	/Assets/Scss/_p50-page-forgot-password.scss
+11		ニュース		news	固定ページ		/Pages/page-news.php	/Assets/Scss/_p50-page-news.scss
+12		メールマガジン登録		mailmagazine	固定ページ		/Pages/page-mailmagazine.php	/Assets/Scss/_p50-page-mailmagazine.scss
+13		会社概要		company	固定ページ		/Pages/page-company.php	/Assets/Scss/_p50-page-company.scss
+14		広告掲載をご検討の方へ		ad	固定ページ		/Pages/page-ad.php	/Assets/Scss/_p50-page-ad.scss
+15		プライバシーポリシー		privacypolicy	固定ページ		/Pages/page-privacypolicy.php	/Assets/Scss/_p50-page-privacypolicy.scss
+16		コンテンツポリシー		contentspolicy	固定ページ		/Pages/page-contentspolicy.php	/Assets/Scss/_p50-page-contentspolicy.scss
+17		会員規約		agreement	固定ページ		/Pages/page-agreement.php	/Assets/Scss/_p50-page-agreement.scss
+18		サイトマップ		sitemap	固定ページ		/Pages/page-sitemap.php	/Assets/Scss/_p50-page-sitemap.scss
+19		記事・コラム		contents	固定ページ		/index.php	/Assets/Scss/_p50-page-index.scss
+20		動画		movies	固定ページ		/Pages/page-movies.php	/Assets/Scss/_p50-page-movies.scss
+		動画 詳細		movie	シングルページ		/single-movie.php	/Assets/Scss/_p50-single-movie.scss
+22		インタビュー		Interviews	固定ページ		/Pages/page-Interviews.php	/Assets/Scss/_p50-page-Interviews.scss
+		インタビュー 詳細		interviews	シングルページ		/single-interviews.php	/Assets/Scss/_p50-single-interviews.scss
+24		マンガ		comics	固定ページ		/Pages/page-comics.php	/Assets/Scss/_p50-page-comics.scss
+		マンガ 詳細		comics	シングルページ		/single-comics.php	/Assets/Scss/_p50-single-comics.scss
+26		クイズ		quizes	固定ページ		/Pages/page-quizes.php	/Assets/Scss/_p50-page-quizes.scss
+		クイズ 詳細		quiz	シングルページ		/single-quiz.php	/Assets/Scss/_p50-single-quiz.scss

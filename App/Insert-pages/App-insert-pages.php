@@ -25,9 +25,6 @@ function create_template_file($template_file_path, $post_title) {
 	EOD;
 
 	if (!file_exists($template_file_name)) {
-		echo '<pre>';
-		var_dump($post_title);
-		echo '</pre>';
 		file_put_contents($template_file_name, $template_file_content);
 	}
 }
@@ -61,8 +58,6 @@ function get_inserting_page_title($data, $th_array) {
 function get_inserting_post_parent_id($data, $th_array) {
 
 	if (
-		!$data[i('2nd', $th_array)] &&
-		$data[i('3rd', $th_array)] &&
 		$data[i('親ページ', $th_array)] &&
 		$data[i('種類', $th_array)] === '固定ページ'
 	) {
@@ -86,9 +81,9 @@ function insert_pages_from_csv() {
 	$csv_path = get_theme_file_path() . "/App/Insert-pages/pages.csv";
 	$csv = fopen($csv_path, 'r');
 
-	$th_array = fgetcsv($csv);
+	$th_array = fgetcsv($csv, null, '	');
 
-	while (($data = fgetcsv($csv)) !== false) {
+	while (($data = fgetcsv($csv, null, '	')) !== false) {
 
 		$post_type = 'page';
 		$post_content = '';
@@ -101,7 +96,6 @@ function insert_pages_from_csv() {
 		//テンプレートファイルの作成
 		//========================
 		create_template_file($template_file_path, $post_title);
-
 
 		//========================
 		//投稿・固定ページ作成
@@ -142,4 +136,4 @@ function insert_pages_from_csv() {
 	fclose($csv);
 }
 
-// add_action('init', 'insert_pages_from_csv');
+add_action('init', 'insert_pages_from_csv');
