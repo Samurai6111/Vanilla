@@ -365,6 +365,45 @@ add_filter('send_password_change_email', '__return_false');
 // パスワードリセット時に管理者へ送信されるメール
 add_filter('wp_password_change_notification_email', '__return_false');
 
+function vanilla_get_taxonomy_depth( $taxonomy ) {
+	// タクソノミーの全タームを取得
+	$terms = get_terms([
+			'taxonomy'   => $taxonomy,
+			'hide_empty' => false,
+			'parent'     => 0,
+	]);
+
+	$max_depth = 0;
+
+	foreach ( $terms as $term ) {
+			// 各タームに対して、深さを調べる関数を再帰的に呼び出す
+			$term_depth = vanilla_get_term_depth( $term, $taxonomy, 0 );
+			// 深さの最大値を更新
+			$max_depth = max( $max_depth, $term_depth );
+	}
+
+	return $max_depth;
+}
+
+function vanilla_get_term_depth( $term, $taxonomy, $depth = 0 ) {
+	// タームの子を取得
+	$children = get_terms([
+			'taxonomy'   => $taxonomy,
+			'hide_empty' => false,
+			'parent'     => $term->term_id,
+	]);
+
+	$max_depth = $depth;
+
+	foreach ( $children as $child ) {
+			// 各子タームに対して、深さを調べる関数を再帰的に呼び出す
+			$child_depth = vanilla_get_term_depth( $child, $taxonomy, $depth + 1 );
+			// 深さの最大値を更新
+			$max_depth = max( $max_depth, $child_depth );
+	}
+
+	return $max_depth;
+}
 
 /**
 * 管理画面でタームの親、子、孫階層のそれぞれだけを表示する
