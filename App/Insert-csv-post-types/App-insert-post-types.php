@@ -15,18 +15,44 @@ function vanilla_change_post_menu_label() {
 }
 
 function vanilla_change_post_object_label() {
-    global $wp_post_types;
-    $labels = &$wp_post_types['post']->labels;
-    $labels->name = '読み物';
-    $labels->singular_name = '読み物';
-    $labels->add_new = '新しい読み物';
-    $labels->add_new_item = '新しい読み物を追加';
-    $labels->edit_item = '読み物を編集';
-    $labels->new_item = '新しい読み物';
-    $labels->view_item = '読み物を表示';
-    $labels->search_items = '読み物を検索';
-    $labels->not_found = '読み物が見つかりませんでした';
-    $labels->not_found_in_trash = 'ゴミ箱に読み物が見つかりませんでした';
+	global $wp_post_types;
+	$labels = &$wp_post_types['post']->labels;
+	$name = "記事";
+	$labels->name = "{$name}";
+	$labels->singular_name = "{$name}";
+	$labels->add_new = "新しい{$name}";
+	$labels->add_new_item = "新しい{$name}を追加";
+	$labels->edit_item = "{$name}を編集";
+	$labels->new_item = "新しい{$name}";
+	$labels->view_item = "{$name}を表示";
+	$labels->view_items = "投稿一覧を表示";
+	$labels->search_items = "{$name}を検索";
+	$labels->not_found = "{$name}が見つかりませんでした";
+	$labels->not_found_in_trash = "ゴミ箱に{$name}が見つかりませんでした";
+	$labels->parent_item_colon = NULL;
+	$labels->all_items = "{$name}一覧";
+	$labels->archives = "{$name}アーカイブ";
+	$labels->attributes = "{$name}の属性";
+	$labels->insert_into_item = "{$name}に挿入";
+	$labels->uploaded_to_this_item = "この{$name}へのアップロード";
+	$labels->featured_image = "アイキャッチ画像";
+	$labels->set_featured_image = "アイキャッチ画像を設定";
+	$labels->remove_featured_image = "アイキャッチ画像を削除";
+	$labels->use_featured_image = "アイキャッチ画像として使用";
+	$labels->filter_items_list = "{$name}一覧を絞り込む";
+	$labels->filter_by_date = "日付で絞り込む";
+	$labels->items_list_navigation = "{$name}リストナビゲーション";
+	$labels->items_list = "{$name}リスト";
+	$labels->item_published = "{$name}を公開しました。";
+	$labels->item_published_privately = "{$name}を限定公開しました。";
+	$labels->item_reverted_to_draft = "{$name}を下書きに戻しました。";
+	$labels->item_trashed = "{$name}をゴミ箱に移動しました。";
+	$labels->item_scheduled = "{$name}を予約しました。";
+	$labels->item_updated = "{$name}を更新しました。";
+	$labels->item_link = "{$name}リンク";
+	$labels->item_link_description = "{$name}へのリンク。";
+	$labels->menu_name = "{$name}";
+	$labels->name_admin_bar = "{$name}";
 }
 
 
