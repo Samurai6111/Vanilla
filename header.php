@@ -17,20 +17,6 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<link rel="shortcut icon" href="img/common/favicon.png">
 
-	<!-- ogp -->
-	<meta property="og:title" content="ページのタイトル">
-	<meta property="og:description" content="ページの説明文">
-	<meta property="og:image" content="画像のURL">
-	<meta property="og:url" content="ページのURL">
-	<meta property="og:type" content="website">
-	<meta property="og:site_name" content="サイト名">
-	<meta property="og:locale" content="ja_JP">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@Twitterアカウント">
-	<meta name="twitter:title" content="Twitter用のタイトル">
-	<meta name="twitter:description" content="Twitter用の説明文">
-	<meta name="twitter:image" content="Twitter用の画像URL">
-
 	<!-- swiper 読み込み -->
 	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>

@@ -75,18 +75,6 @@ function vanilla_get_current_link() {
 }
 
 /**
- * 現在のURLを取得する
- *
- * @return 現在のページのURL
- */
-function vanilla_get_current_page_url() {
-	global  $wp;
-	$current_link = home_url($wp->request);
-	return $current_link;
-}
-
-
-/**
  * 特定のスラッグを持つ投稿がデータベース上に存在する場合の関数
  *
  * @param $post_name 投稿スラッグ
@@ -129,29 +117,15 @@ function vanilla_do_output_buffer() {
 	ob_start();
 }
 
-/**
- * 投稿を消すリンクを出力
- *
- * @param $post_id 投稿id
- */
-function vanilla_delete_post_link($post_id) {
-	$post = get_post($post_id);
-	$post_type = get_post_type($post_id);
-	$delete_link = wp_nonce_url(admin_url() . "post.php", "post=" . $post_id . "&action=delete");
-	return $delete_link;
-}
 
 /**
  * 開発者用の条件分岐関数
  * wp_optionsのadmin_emailでログインしていた場合にtrueを返す
  */
 function is_developer() {
-	$login_email = get_option('admin_email');
-	$user_id = get_current_user_id();
-	$user_info_array = get_user_by('id', $user_id);
-	$user_login = $user_info_array->user_email;
+	$current_user = wp_get_current_user();
 
-	if ($user_login == $login_email) {
+	if ($current_user === 'developer') {
 		return true;
 	} else {
 		return false;
@@ -316,153 +290,7 @@ function s_GET($key) {
 	}
 }
 
-/**
- * ＄＿FILESの中身をサニタイズ
- *
- * @param $
- */
-function s_FILES($key1, $key2) {
-	if (!empty($_FILES)) {
-		$s_FILES = vanilla_sanitize_array($_FILES[$key1]);
 
-		if (isset($s_FILES[$key2])) {
-			return $s_FILES[$key2];
-		} else {
-			return false;
-		}
-	}
-}
-
-
-/**
- * 特定のテーブルのデータの行数を取得する
- *
- * @param $table_name prefixを除いたテーブルの名前
- */
-function vanilla_db_table_rows($table_name) {
-	global $wpdb;
-	$table_name = $wpdb->prefix . $table_name;
-	$count_query = "select count(*) from $table_name";
-	$num = $wpdb->get_var($count_query);
-	return $num;
-}
-
-/**
- * メディアライブラリのスラッグからサムネイルIDを取得する関数
- *
- * @param $slug メディア投稿のスラッグ（多くの場合はファイル名になる）
- * @return サムネイルのID
- */
-function vanilla_get_attachment_post_id($slug) {
-	$thumbnail_args = [
-		'post_type' => 'attachment',
-		'post_status' => 'inherit',
-		'posts_per_page' => 1,
-		'name' => $slug,
-	];
-	$thumbnail_id = get_posts($thumbnail_args)[0]->ID;
-
-	return $thumbnail_id;
-}
-
-/**
- * カスタムフィールドのinstrcutions用に使う画像をアコーディオンで出力する関数
- *
- * @param string $img_path 画像のパス
- */
-function vanilla_acf_fields_accordion($img_file) {
-	$html =
-		'<div class="acfAccordion -img">'
-		. '<a href="' . get_template_directory_uri() . '/Img/Dashboard/Acf/' . $img_file . '" '
-		. 'class="button tagadd" target="_blank" rel="noopener">説明を見る</a>'
-		. '</div>';
-	return $html;
-}
-
-/**
- * 投稿のmenu_orderを引数の配列の順番に変更する関数
- *
- * @param $post_slug_array 対象の投稿のスラッグの配列
- */
-function vanilla_update_post_menu_order($post_array) {
-	//= 引数の例 ====
-	// $post_array = [
-	// 	['post_slug' => 	'slug1',],
-	// 	['post_slug' => 	'slug2',],
-	// ];
-
-	global $wpdb;
-	$i = 0;
-	$wp_posts = $wpdb->prefix . 'posts';
-	foreach ($post_array as $post) {
-		++$i;
-		$post_slug = $post['post_slug'];
-		$post_id = get_page_by_path($post_slug, OBJECT, 'post')->ID;
-		$result = $wpdb->update(
-			$wp_posts,
-			['menu_order' => $i],
-			['ID' => $post_id],
-			['%d'],
-			['%d']
-		);
-	}
-}
-
-
-/**
- * タームのterm_orderを引数の配列の順番に変更する関数
- *
- * @param $term_slug_array 対象の投稿のスラッグの配列
- */
-function vanilla_update_term_order($term_slug_array) {
-	//= 引数の例 ====
-	// $term_slug_array = [
-	// 	'taxonomyname' => [
-	// 		'term1' => 'ターム1',
-	// 		'term2' => 'ターム2',
-	// 	],
-	// ];
-	global $wpdb;
-	$i = 0;
-	$wp_terms = $wpdb->prefix . 'terms';
-	//== 親タームの並び替え ========
-	foreach ($term_slug_array as $taxonomy => $studio_parent_terms) {
-		$i = 0;
-		foreach ($studio_parent_terms as $studio_parent_term_slug => $studio_parent_term_name) {
-			++$i;
-			$term_id = get_term_by('slug', $studio_parent_term_slug, $taxonomy)->term_id;
-			$result = $wpdb->update(
-				$wp_terms,
-				['term_order' => $i],
-				['term_id' => $term_id],
-				['%d'],
-				['%d']
-			);
-		}
-	}
-}
-
-
-/**
- * 管理画面のfooterにコードを追記する
- */
-function vanilla_acf_floating_banner() {
-	global $pagenow;
-
-	// ---------- 投稿タイプ「投稿」だったら ----------
-	$post_type = get_post_type($_GET['post']);
-	if ($pagenow === 'post.php' && $post_type === 'post') {
-?>
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/Assets/Css/admin-post.css">
-		<script src="<?php echo get_template_directory_uri(); ?>/Assets/Js/Custom/admin-post.js"></script>
-	<?php
-	}
-
-	?>
-	<script src="<?php echo get_template_directory_uri(); ?>/Assets/Js/Custom/admin-custom.js"></script>
-<?php
-}
-add_action('admin_footer', 'vanilla_acf_floating_banner');
 
 /**
  * デフォルトで表示させたい投稿コンテンツを取得する関数
@@ -584,4 +412,85 @@ function is_honban() {
 	} else {
 		return false;
 	}
+}
+
+
+/**
+* URLに「/page/」が合ったらリダイレクトをしない
+*
+* @param string $redirect_url
+* @return string $redirect_url
+*/
+function vanilla_disable_redirect_canonical( $redirect_url ) {
+
+	if ( is_archive() ){
+			$subject = $redirect_url;
+			$pattern = '/\/page\//'; // URLに「/page/」があるかチェック
+			preg_match($pattern, $subject, $matches);
+
+			if ($matches){
+			//リクエストURLに「/page/」があれば、リダイレクトしない。
+			$redirect_url = false;
+			return $redirect_url;
+			}
+	}
+}
+add_filter('redirect_canonical','vanilla_disable_redirect_canonical');
+
+
+
+/**
+ * テキストエリアフィールドの改行コードをHTMLの<br>タグに変換するためのデフォルト値を設定します。
+ *
+ * この関数はACFのフィルターフック`acf/load_field/type=textarea`に接続され、
+ * テキストエリアフィールドの設定を変更する際に呼び出されます。
+ * デフォルトで`new_lines`の値を`br`に設定することで、
+ * 改行を自動的に<br>タグに変換します。
+ *
+ * @param array $field フィールドの設定配列。
+ * @return array 変更後のフィールドの設定配列。
+ */
+function vanilla_acf_default_new_lines_setting($field) {
+	if ($field['type'] === 'textarea') {
+		$field['new_lines'] = 'br';
+	}
+	return $field;
+}
+
+add_filter('acf/load_field/type=textarea', 'vanilla_acf_default_new_lines_setting');
+
+/**
+ * Yoast SEOプラグインで設定されたOGP画像のURLを取得する。
+ *
+ * 現在の投稿について、Yoast SEOプラグインによって設定された
+ * Open Graph画像（OGP画像）のURLを取得します。
+ * 設定されている画像がない場合はfalseを返します。
+ *
+ * @return string|false Yoast SEOで設定された画像のURL、もしくは設定がなければfalse。
+ */
+function vanilla_get_yoast_seo_image() {
+	if (function_exists('get_post_meta')) {
+			$yoast_image = get_post_meta(get_the_ID(), '_yoast_wpseo_opengraph-image', true);
+			if (!empty($yoast_image)) {
+					return $yoast_image;
+			}
+	}
+	return false;
+}
+
+/**
+ * 現在の投稿のアイキャッチ画像のURLを取得する。
+ *
+ * WordPressの標準機能であるアイキャッチ画像を取得します。
+ * 設定されているアイキャッチ画像がある場合はそのURLを返し、
+ * ない場合はfalseを返します。
+ *
+ * @return string|false アイキャッチ画像のURL、もしくは設定がなければfalse。
+ */
+function vanilla_get_featured_image() {
+	if (has_post_thumbnail()) {
+			$ps_thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+			return $ps_thumb[0];
+	}
+	return false;
 }

@@ -1,21 +1,5 @@
 <?php
 
-/**
- * 管理画面→「外観」→「メニュー」のナビメニューを追加
- */
-function vanilla_register_nav_menus() {
-	register_nav_menu('vanilla-nav-menu-pc', 'PCメニュー');
-	register_nav_menu('vanilla-nav-menu-sp', 'SPメニュー');
-}
-add_action('init', 'vanilla_register_nav_menus', 10);
-
-function vanilla_register_nav_menu($menu_slug, $menu_id) {
-	if (!has_nav_menu($menu_slug)) {
-		$locations = get_theme_mod('nav_menu_locations');
-		$locations[$menu_slug] = $menu_id;
-		set_theme_mod('nav_menu_locations', $locations);
-	}
-}
 
 //--------------------------------------------------
 // ユーザーごとに管理者のサイドバーを変更
@@ -66,52 +50,20 @@ function vanilla_hide_admin_menu() {
 }
 // add_action('admin_head', 'vanilla_hide_admin_menu');
 
-/*--------------------------------------------------
-/* カスタム投稿「イベント」の管理画面の投稿一覧にカラムを増やす
-/*------------------------------------------------*/
-function vanilla_custom_event_posts_columns($columns) {
-	unset($columns['date']);
-	unset($columns['category']);
-	return array_merge(
-		$columns,
-		array(
-			'event__taxonomy' => __('カテゴリ'),
-		)
-	);
-}
-add_filter('manage_event_posts_columns', 'vanilla_custom_event_posts_columns');
-
-/*--------------------------------------------------
-/* カスタム投稿「イベント」の管理画面の投稿一覧のカラムに値を出力する
-/*------------------------------------------------*/
-function display_event_posts_custom_column($column, $post_id) {
-	$post__type = get_post_type($post_id);
-	if ($post__type === 'event') {
-
-		switch ($column) {
-			case 'event__taxonomy':
-				$event__term = get_the_terms($post_id, 'event_taxonomy');
-				if ($event__term) {
-					echo $event__term->name;
-				} else {
-					echo '--';
-				}
-				break;
-		}
-	}
-}
-add_action('manage_event_posts_custom_column', 'display_event_posts_custom_column', 10, 2);
 
 /**
  * metaタグ設定
  */
 function vanilla_meta_ogp() {
-	if (is_front_page() || is_home() || is_singular()) {
+	if (!is_admin()) {
 
 		/*初期設定*/
 
+		$site_title = get_bloginfo('name');
 		// 画像 （アイキャッチ画像が無い時に使用する代替画像URL）
-		$ogp_image = get_template_directory_uri() . '/Img/SEO/OGP_1200x630.png';
+		$ogp_image = vanilla_get_yoast_seo_image() ?: vanilla_get_featured_image() ?: get_template_directory_uri() . '/Image/SEO/edoctor_OGP.png';
+
+		// $ogp_image = get_template_directory_uri() . '/Image/SEO/edoctor_OGP.png';
 		// Twitterのアカウント名 (@xxx)
 		$twitter_site = '';
 		// Twitterカードの種類（summary_large_image または summary を指定）
@@ -128,30 +80,18 @@ function vanilla_meta_ogp() {
 		//== 記事＆固定ページ ====
 		if (is_singular()) {
 			setup_postdata($post);
-			$ogp_title = $post->post_title;
+			$ogp_title = "{$post->post_title} | {$site_title}";
 			$ogp_description = mb_substr(get_the_excerpt(), 0, 100);
 			$ogp_url = get_permalink();
 			wp_reset_postdata();
-		} elseif
-		//== トップページ ====
-		(is_front_page() || is_home()) {
-			$ogp_title = get_bloginfo('name');
-			$ogp_description = get_bloginfo('description');
-			$ogp_url = home_url();
 		}
-
 		// og:type
 		$ogp_type = (is_front_page() || is_home()) ? 'website' : 'article';
 
-		// og:image
-		if (is_singular() && has_post_thumbnail()) {
-			$ps_thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-			$ogp_image = $ps_thumb[0];
-		}
 
 		// 出力するOGPタグをまとめる
 		$html = "\n";
-		$html .= "<title>{$ogp_title} | {$ogp_description}</title> \n";
+		$html .= "<title>{$ogp_title}</title> \n";
 		$html .= "<meta property='og:locale' content='ja_JP'> \n";
 		$html .= '<meta property="og:title" content="' . esc_attr($ogp_title) . '">' . "\n";
 		$html .= '<meta property="og:description" content="' . esc_attr($ogp_description) . '">' . "\n";
