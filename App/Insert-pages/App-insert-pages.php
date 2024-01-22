@@ -10,19 +10,25 @@ function create_template_file($template_file_path, $post_title) {
 
 	$template_file_name = get_template_directory() . $template_file_path;
 
-	$template_file_content = <<<EOD
-	<?php
+	$template_file_content = '';
+	$extension = pathinfo($template_file_name, PATHINFO_EXTENSION);
 
-	/**
-	 * Template Name: $post_title
-	 * @package WordPress
-	 * @Template Post Type: post, page,
-	 * @subpackage Vanilla
-	 */
-	get_header(); ?>
 
-	<?php get_footer(); ?>
-	EOD;
+	if ($extension === 'php') {
+		$template_file_content = <<<EOD
+		<?php
+
+		/**
+		 * Template Name: $post_title
+		 * @package WordPress
+		 * @Template Post Type: post, page,
+		 * @subpackage Vanilla
+		 */
+		get_header(); ?>
+
+		<?php get_footer(); ?>
+		EOD;
+	}
 
 	if (!file_exists($template_file_name)) {
 		file_put_contents($template_file_name, $template_file_content);
@@ -91,11 +97,17 @@ function insert_pages_from_csv() {
 		$post_slug = $data[i('スラッグ', $th_array)];
 		$post_parent = get_inserting_post_parent_id($data, $th_array);
 		$template_file_path = $data[i('テンプレートファイル', $th_array)];
+		$scss_file_path = $data[i('scssファイル', $th_array)];
 
 		//========================
 		//テンプレートファイルの作成
 		//========================
 		create_template_file($template_file_path, $post_title);
+
+		//========================
+		//scssファイルの作成
+		//========================
+		create_template_file($scss_file_path, $post_title);
 
 		//========================
 		//投稿・固定ページ作成
