@@ -17,10 +17,11 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<link rel="shortcut icon" href="img/common/favicon.png">
 
+	<?php wp_head(); ?>
+
 	<!-- swiper 読み込み -->
 	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-	<?php wp_head(); ?>
 </head>
 
 <body id="top" oncontextmenu="return false;" oncopy="return false;">
