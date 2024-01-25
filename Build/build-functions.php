@@ -494,3 +494,28 @@ function vanilla_get_featured_image() {
 	}
 	return false;
 }
+
+
+/**
+ * 投稿保存時にデフォルトサムネイルを設定する。
+ *
+ * この関数は、WordPress の save_post アクションフックを使用して、
+ * 投稿が保存されるたびにトリガーされます。もし保存された投稿にサムネイルが
+ * 設定されていない場合、指定されたデフォルトのサムネイル（投稿ID 89の画像）を
+ * 自動的に設定します。この処理はオートセーブやリビジョンの保存時には実行されません。
+ *
+ * @param int $post_id 保存された投稿のID。
+ * @return void この関数は値を返しません。
+ */
+function vanilla_set_default_thumbnail_on_save($post_id) {
+	// オートセーブやリビジョンをチェックしない
+	if (wp_is_post_revision($post_id) || wp_is_post_autosave($post_id)) {
+		return;
+	}
+
+	// サムネイルがすでに設定されているかチェック
+	if (!has_post_thumbnail($post_id)) {
+		// 投稿ID 89 の画像をサムネイルとして設定
+		set_post_thumbnail($post_id, 130);
+	}
+}
