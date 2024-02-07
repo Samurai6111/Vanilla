@@ -1,259 +1,226 @@
-@charset 'UTF-8';
-
-//____________________________
-//WPの投稿contentsの中のスタイル
-//____________________________
-.defaultTemplate {
-	line-height: 1.5;
-
-	.defaultTemplate__header {
-		h1 {
-			font-size: 3.2rem;
-			font-weight: bold;
-
-			@media#{$sp} {
-				font-size: 2.4rem;
-			}
-		}
-	}
-
-	.defaultTemplate__thumbnail {
-		padding-top: 64%;
-		margin: 4rem 0;
-		background-color: $black_333;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
+.postContentsCommonStyle {
+	// ---------- テキスト ----------
+	a ,
+	p ,
+	li ,
+	dd ,
+	td ,
+	span ,
+	pre ,
+	strong ,
+	em {
+		font-size: 1.6rem;
 
 		@media#{$sp} {
-			margin: 2rem 0;
+			font-size: 1.2rem;
 		}
 	}
 
-	.defaultTemplate__contents {
-		// ---------- テキスト ----------
-		a ,
-		p ,
-		li ,
-		dd ,
-		td ,
-		span ,
-		pre ,
-		strong ,
-		em {
+	// ---------- 見出し ----------
+	h1 {
+		margin-bottom: 0.5em;
+		font-size: 3.2rem;
+		font-weight: bold;
+
+		@media#{$sp} {
+			font-size: 2.4rem;
+		}
+	}
+
+	h2 {
+		position: relative;
+		width: 100%;
+		padding-bottom: 0.8rem;
+		margin-bottom: 0.5em;
+		font-size: 3.2rem;
+		font-weight: bold;
+
+		@media#{$sp} {
+			font-size: 2.4rem;
+		}
+
+		&:after {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 4px;
+			content: '';
+			background-color: $primary;
+		}
+	}
+
+	h3 {
+		position: relative;
+		padding-left: 2rem;
+		margin-bottom: 0.5em;
+		font-size: 2.8rem;
+		font-weight: bold;
+		line-height: 2;
+
+		@media#{$sp} {
+			font-size: 2rem;
+		}
+
+		&:before {
+			position: absolute;
+			top: calc(50% - 12px);
+			left: 0;
+			width: 8px;
+			height: 24px;
+			content: '';
+			background-color: $primary;
+		}
+	}
+
+	h4 {
+		position: relative;
+		width: 100%;
+		padding-bottom: 0.8rem;
+		margin-bottom: 0.5em;
+		font-size: 2.8rem;
+		font-weight: bold;
+
+		@media#{$sp} {
+			font-size: 2rem;
+		}
+
+		&:before {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 4px;
+			content: '';
+			background-color: $primary;
+		}
+
+		&:after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 30%;
+			height: 0.4rem;
+			content: '';
+			background-color: lightgray;
+		}
+	}
+
+	h5 {
+		margin-bottom: 0.5em;
+		font-size: 2.4rem;
+		font-weight: bold;
+
+		@media#{$sp} {
 			font-size: 1.6rem;
+		}
+	}
+
+	h6 {
+		position: relative;
+		padding-left: 3rem;
+		margin-bottom: 0.5em;
+		font-size: 2rem;
+		font-weight: bold;
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: $primary;
+			content: '●';
+			font-size: 1em;
+		}
+
+		@media#{$sp} {
+			font-size: 1.4rem;
+		}
+	}
+
+	// ---------- 画像 ----------
+	img {
+		display: inline-block;
+		height: auto;
+		max-width: 100%;
+		margin: 2.4rem 0;
+		vertical-align: middle;
+	}
+
+	// ---------- 注釈 ----------
+	blockquote {
+		position: relative;
+		padding: 1.3rem 1.5rem 1.3rem 5rem;
+		background-color: $gray_dbd;
+
+		&::before {
+			position: absolute;
+			top: 20px;
+			left: 15px;
+			display: inline-block;
+			color: $primary;
+			content: '\f10d';
+			font-family: FontAwesome;
+			font-size: 25px;
+			line-height: 1;
+			vertical-align: middle;
+		}
+
+		p {
+			padding: 0;
+			margin-top: 10px;
+			line-height: 1.7;
+		}
+	}
+
+	// ---------- リスト ----------
+	ul {
+		list-style: disc;
+	}
+
+	ol {
+		list-style: decimal;
+	}
+
+	ul ,
+	ol {
+		margin-bottom: 1em;
+
+		li {
+			margin-left: 1.6em;
+			font-size: 1.6rem;
+			list-style-position: outsite;
 
 			@media#{$sp} {
 				font-size: 1.2rem;
 			}
-		}
 
-		// ---------- 見出し ----------
-		h1 {
-			margin-bottom: 0.5em;
-			font-size: 3.2rem;
-			font-weight: bold;
+			&::marker {
+				color: $primary; //リストのマーカーの色を変えたければここを変更
 
-			@media#{$sp} {
-				font-size: 2.4rem;
+				marker-offset: 0;
 			}
 		}
+	}
 
-		h2 {
-			position: relative;
-			width: 100%;
-			padding-bottom: 0.8rem;
-			margin-bottom: 0.5em;
-			font-size: 3.2rem;
-			font-weight: bold;
+	// ---------- リンク ----------
+	a {
+		color: $primary;
 
-			@media#{$sp} {
-				font-size: 2.4rem;
-			}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 
-			&:after {
-				position: absolute;
-				right: 0;
-				bottom: 0;
-				width: 100%;
-				height: 4px;
-				content: '';
-				background-color: $primary;
-			}
+	// ---------- テーブル ----------
+	table {
+		& ,
+		* {
+			border-color: $primary;
 		}
 
-		h3 {
-			position: relative;
-			padding-left: 2rem;
-			margin-bottom: 0.5em;
-			font-size: 2.8rem;
-			font-weight: bold;
-			line-height: 2;
-
-			@media#{$sp} {
-				font-size: 2rem;
-			}
-
-			&:before {
-				position: absolute;
-				top: calc(50% - 12px);
-				left: 0;
-				width: 8px;
-				height: 24px;
-				content: '';
-				background-color: $primary;
-			}
-		}
-
-		h4 {
-			position: relative;
-			width: 100%;
-			padding-bottom: 0.8rem;
-			margin-bottom: 0.5em;
-			font-size: 2.8rem;
-			font-weight: bold;
-
-			@media#{$sp} {
-				font-size: 2rem;
-			}
-
-			&:before {
-				position: absolute;
-				right: 0;
-				bottom: 0;
-				width: 100%;
-				height: 4px;
-				content: '';
-				background-color: $primary;
-			}
-
-			&:after {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 30%;
-				height: 0.4rem;
-				content: '';
-				background-color: lightgray;
-			}
-		}
-
-		h5 {
-			margin-bottom: 0.5em;
-			font-size: 2.4rem;
-			font-weight: bold;
-
-			@media#{$sp} {
-				font-size: 1.6rem;
-			}
-		}
-
-		h6 {
-			position: relative;
-			padding-left: 3rem;
-			margin-bottom: 0.5em;
-			font-size: 2rem;
-			font-weight: bold;
-
-			&:before {
-				position: absolute;
-				top: 0;
-				left: 0;
-				color: $primary;
-				content: '●';
-				font-size: 1em;
-			}
-
-			@media#{$sp} {
-				font-size: 1.4rem;
-			}
-		}
-
-		// ---------- 画像 ----------
-		img {
-			display: inline-block;
-			height: auto;
-			max-width: 100%;
-			margin: 2.4rem 0;
-			vertical-align: middle;
-		}
-
-		// ---------- 注釈 ----------
-		blockquote {
-			position: relative;
-			padding: 1.3rem 1.5rem 1.3rem 5rem;
-			background-color: $gray_dbd;
-
-			&::before {
-				position: absolute;
-				top: 20px;
-				left: 15px;
-				display: inline-block;
-				color: $primary;
-				content: '\f10d';
-				font-family: FontAwesome;
-				font-size: 25px;
-				line-height: 1;
-				vertical-align: middle;
-			}
-
-			p {
-				padding: 0;
-				margin-top: 10px;
-				line-height: 1.7;
-			}
-		}
-
-		// ---------- リスト ----------
-		ul {
-			list-style: disc;
-		}
-
-		ol {
-			list-style: decimal;
-		}
-
-		ul ,
-		ol {
-			margin-bottom: 1em;
-
-			li {
-				margin-left: 1.6em;
-				font-size: 1.6rem;
-				list-style-position: outsite;
-
-				@media#{$sp} {
-					font-size: 1.2rem;
-				}
-
-				&::marker {
-					color: $primary; //リストのマーカーの色を変えたければここを変更
-
-					marker-offset: 0;
-				}
-			}
-		}
-
-		// ---------- リンク ----------
-		a {
-			color: $primary;
-
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-
-		// ---------- テーブル ----------
-		table {
-			& ,
-			* {
-				border-color: $primary;
-			}
-
-			tr {
-				td {
-					padding: 0.8rem;
-				}
+		tr {
+			td {
+				padding: 0.8rem;
 			}
 		}
 	}

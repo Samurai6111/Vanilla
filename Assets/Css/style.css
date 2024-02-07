@@ -1813,7 +1813,7 @@ body {
   width: 1.4rem;
   height: 1.4rem;
   content: '';
-  background-color: #333333;
+  background-color: black;
   border-radius: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -2370,75 +2370,45 @@ body {
   border: 0.1rem solid #ff0000;
 }
 
-.defaultTemplate {
-  line-height: 1.5;
-}
-
-.defaultTemplate .defaultTemplate__header h1 {
-  font-size: 3.2rem;
-  font-weight: bold;
-}
-
-@media only screen and (max-width:480px) {
-  .defaultTemplate .defaultTemplate__header h1 {
-    font-size: 2.4rem;
-  }
-}
-
-.defaultTemplate .defaultTemplate__thumbnail {
-  padding-top: 64%;
-  margin: 4rem 0;
-  background-color: #333333;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-@media only screen and (max-width:480px) {
-  .defaultTemplate .defaultTemplate__thumbnail {
-    margin: 2rem 0;
-  }
-}
-
-.defaultTemplate .defaultTemplate__contents a,
-.defaultTemplate .defaultTemplate__contents p,
-.defaultTemplate .defaultTemplate__contents li,
-.defaultTemplate .defaultTemplate__contents dd,
-.defaultTemplate .defaultTemplate__contents td,
-.defaultTemplate .defaultTemplate__contents span,
-.defaultTemplate .defaultTemplate__contents pre,
-.defaultTemplate .defaultTemplate__contents strong,
-.defaultTemplate .defaultTemplate__contents em {
+.postContentsCommonStyle a,
+.postContentsCommonStyle p,
+.postContentsCommonStyle li,
+.postContentsCommonStyle dd,
+.postContentsCommonStyle td,
+.postContentsCommonStyle span,
+.postContentsCommonStyle pre,
+.postContentsCommonStyle strong,
+.postContentsCommonStyle em {
   font-size: 1.6rem;
 }
 
 @media only screen and (max-width:480px) {
-  .defaultTemplate .defaultTemplate__contents a,
-  .defaultTemplate .defaultTemplate__contents p,
-  .defaultTemplate .defaultTemplate__contents li,
-  .defaultTemplate .defaultTemplate__contents dd,
-  .defaultTemplate .defaultTemplate__contents td,
-  .defaultTemplate .defaultTemplate__contents span,
-  .defaultTemplate .defaultTemplate__contents pre,
-  .defaultTemplate .defaultTemplate__contents strong,
-  .defaultTemplate .defaultTemplate__contents em {
+  .postContentsCommonStyle a,
+  .postContentsCommonStyle p,
+  .postContentsCommonStyle li,
+  .postContentsCommonStyle dd,
+  .postContentsCommonStyle td,
+  .postContentsCommonStyle span,
+  .postContentsCommonStyle pre,
+  .postContentsCommonStyle strong,
+  .postContentsCommonStyle em {
     font-size: 1.2rem;
   }
 }
 
-.defaultTemplate .defaultTemplate__contents h1 {
+.postContentsCommonStyle h1 {
   margin-bottom: 0.5em;
   font-size: 3.2rem;
   font-weight: bold;
 }
 
 @media only screen and (max-width:480px) {
-  .defaultTemplate .defaultTemplate__contents h1 {
+  .postContentsCommonStyle h1 {
     font-size: 2.4rem;
   }
 }
 
-.defaultTemplate .defaultTemplate__contents h2 {
+.postContentsCommonStyle h2 {
   position: relative;
   width: 100%;
   padding-bottom: 0.8rem;
@@ -2448,12 +2418,12 @@ body {
 }
 
 @media only screen and (max-width:480px) {
-  .defaultTemplate .defaultTemplate__contents h2 {
+  .postContentsCommonStyle h2 {
     font-size: 2.4rem;
   }
 }
 
-.defaultTemplate .defaultTemplate__contents h2:after {
+.postContentsCommonStyle h2:after {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -2463,7 +2433,7 @@ body {
   background-color: #ff0000;
 }
 
-.defaultTemplate .defaultTemplate__contents h3 {
+.postContentsCommonStyle h3 {
   position: relative;
   padding-left: 2rem;
   margin-bottom: 0.5em;
@@ -2473,12 +2443,12 @@ body {
 }
 
 @media only screen and (max-width:480px) {
-  .defaultTemplate .defaultTemplate__contents h3 {
+  .postContentsCommonStyle h3 {
     font-size: 2rem;
   }
 }
 
-.defaultTemplate .defaultTemplate__contents h3:before {
+.postContentsCommonStyle h3:before {
   position: absolute;
   top: calc(50% - 12px);
   left: 0;
@@ -2488,7 +2458,7 @@ body {
   background-color: #ff0000;
 }
 
-.defaultTemplate .defaultTemplate__contents h4 {
+.postContentsCommonStyle h4 {
   position: relative;
   width: 100%;
   padding-bottom: 0.8rem;
@@ -2498,12 +2468,12 @@ body {
 }
 
 @media only screen and (max-width:480px) {
-  .defaultTemplate .defaultTemplate__contents h4 {
+  .postContentsCommonStyle h4 {
     font-size: 2rem;
   }
 }
 
-.defaultTemplate .defaultTemplate__contents h4:before {
+.postContentsCommonStyle h4:before {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -2513,7 +2483,7 @@ body {
   background-color: #ff0000;
 }
 
-.defaultTemplate .defaultTemplate__contents h4:after {
+.postContentsCommonStyle h4:after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2523,19 +2493,19 @@ body {
   background-color: lightgray;
 }
 
-.defaultTemplate .defaultTemplate__contents h5 {
+.postContentsCommonStyle h5 {
   margin-bottom: 0.5em;
   font-size: 2.4rem;
   font-weight: bold;
 }
 
 @media only screen and (max-width:480px) {
-  .defaultTemplate .defaultTemplate__contents h5 {
+  .postContentsCommonStyle h5 {
     font-size: 1.6rem;
   }
 }
 
-.defaultTemplate .defaultTemplate__contents h6 {
+.postContentsCommonStyle h6 {
   position: relative;
   padding-left: 3rem;
   margin-bottom: 0.5em;
@@ -2543,7 +2513,7 @@ body {
   font-weight: bold;
 }
 
-.defaultTemplate .defaultTemplate__contents h6:before {
+.postContentsCommonStyle h6:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -2553,12 +2523,12 @@ body {
 }
 
 @media only screen and (max-width:480px) {
-  .defaultTemplate .defaultTemplate__contents h6 {
+  .postContentsCommonStyle h6 {
     font-size: 1.4rem;
   }
 }
 
-.defaultTemplate .defaultTemplate__contents img {
+.postContentsCommonStyle img {
   display: inline-block;
   height: auto;
   max-width: 100%;
@@ -2566,13 +2536,13 @@ body {
   vertical-align: middle;
 }
 
-.defaultTemplate .defaultTemplate__contents blockquote {
+.postContentsCommonStyle blockquote {
   position: relative;
   padding: 1.3rem 1.5rem 1.3rem 5rem;
   background-color: #dbdbdb;
 }
 
-.defaultTemplate .defaultTemplate__contents blockquote::before {
+.postContentsCommonStyle blockquote::before {
   position: absolute;
   top: 20px;
   left: 15px;
@@ -2585,59 +2555,59 @@ body {
   vertical-align: middle;
 }
 
-.defaultTemplate .defaultTemplate__contents blockquote p {
+.postContentsCommonStyle blockquote p {
   padding: 0;
   margin-top: 10px;
   line-height: 1.7;
 }
 
-.defaultTemplate .defaultTemplate__contents ul {
+.postContentsCommonStyle ul {
   list-style: disc;
 }
 
-.defaultTemplate .defaultTemplate__contents ol {
+.postContentsCommonStyle ol {
   list-style: decimal;
 }
 
-.defaultTemplate .defaultTemplate__contents ul,
-.defaultTemplate .defaultTemplate__contents ol {
+.postContentsCommonStyle ul,
+.postContentsCommonStyle ol {
   margin-bottom: 1em;
 }
 
-.defaultTemplate .defaultTemplate__contents ul li,
-.defaultTemplate .defaultTemplate__contents ol li {
+.postContentsCommonStyle ul li,
+.postContentsCommonStyle ol li {
   margin-left: 1.6em;
   font-size: 1.6rem;
   list-style-position: outsite;
 }
 
 @media only screen and (max-width:480px) {
-  .defaultTemplate .defaultTemplate__contents ul li,
-  .defaultTemplate .defaultTemplate__contents ol li {
+  .postContentsCommonStyle ul li,
+  .postContentsCommonStyle ol li {
     font-size: 1.2rem;
   }
 }
 
-.defaultTemplate .defaultTemplate__contents ul li::marker,
-.defaultTemplate .defaultTemplate__contents ol li::marker {
+.postContentsCommonStyle ul li::marker,
+.postContentsCommonStyle ol li::marker {
   color: #ff0000;
   marker-offset: 0;
 }
 
-.defaultTemplate .defaultTemplate__contents a {
+.postContentsCommonStyle a {
   color: #ff0000;
 }
 
-.defaultTemplate .defaultTemplate__contents a:hover {
+.postContentsCommonStyle a:hover {
   text-decoration: underline;
 }
 
-.defaultTemplate .defaultTemplate__contents table,
-.defaultTemplate .defaultTemplate__contents table * {
+.postContentsCommonStyle table,
+.postContentsCommonStyle table * {
   border-color: #ff0000;
 }
 
-.defaultTemplate .defaultTemplate__contents table tr td {
+.postContentsCommonStyle table tr td {
   padding: 0.8rem;
 }
 
@@ -3217,47 +3187,4 @@ body {
   display: inline-block;
   content: '';
   text-decoration: none;
-}
-
-.page404 {
-  padding: 20rem 0 12rem;
-}
-
-.page404 .page404__title {
-  margin-bottom: 2rem;
-  font-size: 3.2rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-@media only screen and (max-width: 768px) {
-  .page404 .page404__title {
-    font-size: 2.4rem;
-  }
-}
-
-.page404 .page404__text {
-  margin-bottom: 2rem;
-  font-size: 1.6rem;
-  text-align: center;
-}
-
-@media only screen and (max-width: 768px) {
-  .page404 .page404__text {
-    font-size: 1.4rem;
-  }
-}
-
-.page404 .page404__link {
-  display: block;
-  font-size: 1.4rem;
-  text-align: center;
-  text-align: center;
-  text-decoration: underline;
-}
-
-@media only screen and (max-width: 768px) {
-  .page404 .page404__link {
-    font-size: 1.2rem;
-  }
 }
