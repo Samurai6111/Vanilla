@@ -495,3 +495,9 @@ function vanilla_custom_search_setting( $where, \WP_Query $q ) {
 	return $where;
 }
 add_filter( 'posts_where', 'vanilla_custom_search_setting', 10, 2 );
+
+
+function vanilla_disable_wp_auto_title_output() {
+	remove_action('wp_head', '_wp_render_title_tag', 1);
+}
+add_action('after_setup_theme', 'vanilla_disable_wp_auto_title_output');
