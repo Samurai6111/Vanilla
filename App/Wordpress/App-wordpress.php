@@ -51,6 +51,7 @@ function vanilla_hide_admin_menu() {
 // add_action('admin_head', 'vanilla_hide_admin_menu');
 
 
+
 /**
  * metaタグ設定
  */
@@ -73,7 +74,7 @@ function vanilla_meta_ogp() {
 
 		global $post;
 		$ogp_title = '';
-		$ogp_description = 'aaa';
+		$ogp_description = '';
 		$ogp_url = '';
 		$html = '';
 
@@ -81,13 +82,24 @@ function vanilla_meta_ogp() {
 		if (is_singular()) {
 			setup_postdata($post);
 			$ogp_title = "{$post->post_title} | {$site_title}";
-			$ogp_description = get_the_content($post) ? get_the_content($post) : get_the_excerpt($post);
-			$ogp_description = wp_strip_all_tags($ogp_description);
+			$ogp_description = get_the_excerpt($post) ? get_the_excerpt($post) : get_the_content($post);
+
 			$ogp_url = get_permalink();
 			wp_reset_postdata();
 		}
+		//== index.php ====
+		elseif (is_home()) {
+			$posts_page_id = get_option('page_for_posts');
+			$post = get_post($posts_page_id);
+			$ogp_title = "{$post->post_title} | {$site_title}";
+			$ogp_description = get_the_excerpt($post) ? get_the_excerpt($post) : get_the_content($post);
+			$ogp_url = get_permalink();
+		}
+
 		// og:type
 		$ogp_type = (is_front_page() || is_home()) ? 'website' : 'article';
+		$ogp_description = strip_tags(strip_shortcodes($ogp_description));
+		$ogp_description = mb_substr($ogp_description, 0, 160, 'UTF-8');
 
 
 		// 出力するOGPタグをまとめる
