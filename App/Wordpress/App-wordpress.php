@@ -61,7 +61,7 @@ function vanilla_meta_ogp() {
 
 		$site_title = get_bloginfo('name');
 		// 画像 （アイキャッチ画像が無い時に使用する代替画像URL）
-		$ogp_image = vanilla_get_yoast_seo_image() ?: vanilla_get_featured_image() ?: get_template_directory_uri() . '/Image/SEO/edoctor_OGP.png';
+		$ogp_image = vanilla_get_yoast_seo_image() ?: vanilla_get_featured_image() ?: get_template_directory_uri() . '/Image/common/ogpimage.jpg';
 
 		// $ogp_image = get_template_directory_uri() . '/Image/SEO/edoctor_OGP.png';
 		// Twitterのアカウント名 (@xxx)
@@ -73,7 +73,7 @@ function vanilla_meta_ogp() {
 
 		global $post;
 		$ogp_title = '';
-		$ogp_description = '';
+		$ogp_description = 'aaa';
 		$ogp_url = '';
 		$html = '';
 
@@ -81,7 +81,8 @@ function vanilla_meta_ogp() {
 		if (is_singular()) {
 			setup_postdata($post);
 			$ogp_title = "{$post->post_title} | {$site_title}";
-			$ogp_description = mb_substr(get_the_excerpt(), 0, 100);
+			$ogp_description = get_the_content($post) ? get_the_content($post) : get_the_excerpt($post);
+			$ogp_description = wp_strip_all_tags($ogp_description);
 			$ogp_url = get_permalink();
 			wp_reset_postdata();
 		}
@@ -92,9 +93,10 @@ function vanilla_meta_ogp() {
 		// 出力するOGPタグをまとめる
 		$html = "\n";
 		$html .= "<title>{$ogp_title}</title> \n";
+		$html .= "<meta name='description' content='{$ogp_description}'> \n";
 		$html .= "<meta property='og:locale' content='ja_JP'> \n";
 		$html .= '<meta property="og:title" content="' . esc_attr($ogp_title) . '">' . "\n";
-		$html .= '<meta property="og:description" content="' . esc_attr($ogp_description) . '">' . "\n";
+		$html .= '<meta property="og:description" content="' . $ogp_description . '">' . "\n";
 		$html .= '<meta property="og:type" content="' . $ogp_type . '">' . "\n";
 		$html .= '<meta property="og:url" content="' . esc_url($ogp_url) . '">' . "\n";
 		$html .= '<meta property="og:image" content="' . esc_url($ogp_image) . '">' . "\n";

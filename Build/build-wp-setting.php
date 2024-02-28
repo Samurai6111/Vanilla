@@ -478,6 +478,7 @@ function vanilla_show_only_acf_pages($query) {
 */
 function vanilla_remove_editor() {
   remove_post_type_support('page', 'editor');
+  remove_post_type_support('page', 'excerpt_');
 }
 add_action('admin_init', 'vanilla_remove_editor');
 
